@@ -11,6 +11,7 @@ idk if ill be able to make classification as well T_T
 
 
 The first model, I started using the normal iterative method to do the prediction but I ended up doing a matrix method(yes with Claude but i understood the concept)
+
 I noticed that the line got different slope and bias based on my number of iterations and step size on gradient descent
 (
 When I put n_iteration = 200000 and learning_rate at 0.001 I get a line that looks like it could apply to the data but if I make n_iteration = 20000 suddenly the line is exactly the opposite of the trend but if I increase step again then the line is good again
