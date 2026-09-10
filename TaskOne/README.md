@@ -23,4 +23,8 @@ a bunch of stuff its hard to think off at 2 AM. rewrote the whole thing by hand 
 It shows loss curve, predicted vs actual and a residual plot that tells you if a linear combination even works for a relationship (I think)
 
 
-_____________________________________________________________________________--
+Third - logistic regression_____________________________________________________________________________--
+I did a binary classification where either a cookie wins or doesn't win. Using sigmoid and cross-entropy function. It did not give a good enough model (it was overfitted) because of multiple reasons like that i did not have enough rows of data.
+I used features: 'chocolate', 'fruity', 'caramel', 'peanutyalmondy','nougat', 'crispedricewafer', 'hard', 'bar', 'pluribus', 'sugarpercent','pricepercent', 'winpercent'
+
+The result was that chocolate overwhelmingly determined the result.
