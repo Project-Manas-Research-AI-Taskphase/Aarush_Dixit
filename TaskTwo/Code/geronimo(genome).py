@@ -182,3 +182,9 @@ fig.suptitle("SVM decision boundaries — gene expression dataset",
 fig.tight_layout(rect=[0, 0, 1, 0.965])
 fig.savefig("svm_gene_boundaries.png", dpi=150, bbox_inches="tight")
 plt.show()
+
+
+#print("duplicate rows:", dataset.duplicated().sum())
+#tr = set(map(tuple, X_train.values))
+#leak = sum(1 for t in map(tuple, X_test.values) if t in tr)
+#print(f"test rows seen in train: {leak}/{len(X_test)} ({100*leak/len(X_test):.1f}%)")
