@@ -21,6 +21,30 @@ much room for creativity.
 
 
 
+
+
+
+
+
+
+
+
+Confusion matrix with weights = balanced
+ RBF (default)
+[[2224   51]
+ [  22  209]]
+ LINEAR (default)
+[[2212   63]
+ [  25  206]]
+ Confusion matrix without weights = balanced
+RBF (default)
+[[2265   10]
+ [  41  190]]   
+ LINEAR (default)
+[[2268    7]
+ [  45  186]]
+
+
 BELOW IS THE READINGS I GOT WITH THE POLYNOMIAL KERNEL BUT THEY'RE TOO HEAVY TO COMPUTE MULTIPLE TIMES SO I'LL REMOVE THEM FROM THE FINAL SUBMISSION.
 ________________________________________________________________
  LINEAR (default)
