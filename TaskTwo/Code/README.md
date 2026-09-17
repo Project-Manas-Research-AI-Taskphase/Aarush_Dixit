@@ -19,7 +19,20 @@ much room for creativity.
 
 ########################################pulasarrrrrrrrrrrr################################################
 
+well I speedran that but ok.
+I did linear, poly, and rbf in this. Polynomial took like an hour to run once so no way am i doing that each time.
+I added some graphs after claude said this could be some useful ones but i didnt really get them/though were too extra so i cut them out.
 
+
+from what I understand from the data is that when I went through it all was that, when I used balanced weights the models missed less pulsars but got more wrong as well. which decreased the F1(Harmonic mean) but irl you'd rather get more wrong answers than miss actual correct ones.
+
+also the polynomial kernel performed slightly worse than the other two
+Performance depended overwhelmingly on coef0
+rather than on C, γ or degree: at matched settings, switching coef0 from 1 to 0 cost up to 0.29 F1 (0.8115 → 0.5203 at C=0.1, γ=0.01, degree 3), and every polynomial configuration in the top thirty had coef0=1
+
+Kernel choice swung F1 by 0.08 on gene expression and 0.005 on pulsar. Genome data set was curved but this is linearly sperable in 8D
+As gaama tends to 0 the RBF kernel loses curvature and degenerates to linear
+ 
 
 
 
@@ -44,6 +57,7 @@ RBF (default)
 [[2268    7]
  [  45  186]]
 
+ALSO if you wanna see it look like a actual table use raw mode or wtv its called
 
 BELOW IS THE READINGS I GOT WITH THE POLYNOMIAL KERNEL BUT THEY'RE TOO HEAVY TO COMPUTE MULTIPLE TIMES SO I'LL REMOVE THEM FROM THE FINAL SUBMISSION.
 ________________________________________________________________
