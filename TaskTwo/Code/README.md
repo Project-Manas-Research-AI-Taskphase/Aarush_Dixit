@@ -1,6 +1,6 @@
 ::::::::::::::::::::::::::::::::::::::::::::GENOME:::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-First I made the genome SVM. It has a linear and rbf kernel. First I had made a default parameter baseline. then using cross variations over 5 fold (ahhhh) I found
+First I made the genome SVM. It has a linear and rbf kernel. I had made a default parameter baseline. then using cross variations over 5 fold (ahhhh) I found
 the 'Optimal parameters'. None of the models overfitted which you can tell be looking at accuracy of test and train both. Accuracy/F1(HM)/ROC-AUC which all agree.
 
 checked for duplicate rows: 28.7% of the dataset is duplicated, so 51.7% of test rows also appear in training, 
