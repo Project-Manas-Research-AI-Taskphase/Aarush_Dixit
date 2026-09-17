@@ -16,11 +16,6 @@ from matplotlib.lines import Line2D
 dataset = pd.read_csv("TaskTwo/Datasets/gene_expression.csv")
 dataset.columns = dataset.columns.str.strip()
 
-print(dataset.head())
-dataset.info()
-print(dataset.describe())
-print(dataset.isnull().sum())
-
 # take into two sets for target and features
 X = dataset.drop(columns="Cancer Present")
 y = dataset["Cancer Present"].astype(int)
