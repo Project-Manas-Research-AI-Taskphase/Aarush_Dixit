@@ -6,7 +6,6 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score, average_precision_score, precision_recall_curve, roc_curve, precision_score, recall_score, f1_score
-
 from sklearn.impute import SimpleImputer #to impute
 from sklearn.decomposition import PCA
 #for da graphs
@@ -33,34 +32,67 @@ X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.2, strati
 #X_test  = X_test.fillna(medians)
 
 #baseline: default params, both kernels (dictionary)
-baseline = {}
-
+baseline_none     = {}
+baseline_balanced = {}
+rows = []
 ########################################storing the base values (Myself wohoo :())
 
 for kernel in ["linear", "rbf"]:
-    pipe = Pipeline([
-        ("imputer", SimpleImputer(strategy="median")),
-        ("scaler",  StandardScaler()),  
-        ("svc", SVC(kernel=kernel, class_weight= "balanced", cache_size=500, random_state=42)),
-    ])
+    for cw in [None, "balanced"]:
+        pipe = Pipeline([
+            ("imputer", SimpleImputer(strategy="median")),
+            ("scaler",  StandardScaler()),
+            ("svc", SVC(kernel=kernel, class_weight=cw,
+                        cache_size=500, random_state=42)),
+        ])
+        pipe.fit(X_train, y_train)
+        pred  = pipe.predict(X_test)
+        score = pipe.decision_function(X_test)
 
-    pipe.fit(X_train, y_train)
-    pred = pipe.predict(X_test)
-    baseline[kernel] = pipe
+        # stash in the right dict so both stay available later
+        (baseline_balanced if cw else baseline_none)[kernel] = pipe
 
-    #"Dignostics" ig 
-    print(f"\n {kernel.upper()} (default)")
-    #counts of true/false positives/negatives.
-    print(confusion_matrix(y_test, pred))
-    #precision, recall, F1 per class.
-    print(classification_report(y_test, pred))
-    #  ROC-AUC, computed from the signed distance to the decision boundary rather than hard 0/1 predictions, so it captures ranking quality.
-    #what T_T the fah
-    print("ROC-AUC :", round(roc_auc_score(y_test, pipe.decision_function(X_test)), 4))
-    print("PR-AUC  :", round(average_precision_score(y_test, pipe.decision_function(X_test)), 4))
-    print("train acc:", round(pipe.score(X_train, y_train), 4),
-            "| test acc:", round(pipe.score(X_test, y_test), 4))
-    print("n_support:", pipe["svc"].n_support_)
+        tag = f"{kernel.upper()} | class_weight={cw or 'none'}"
+        print(f"\n{'='*60}\n {tag}\n{'='*60}")
+        print(confusion_matrix(y_test, pred))
+        print(classification_report(y_test, pred))
+        print("ROC-AUC  :", round(roc_auc_score(y_test, score), 4))
+        print("PR-AUC   :", round(average_precision_score(y_test, score), 4))
+        print("train acc:", round(pipe.score(X_train, y_train), 4),
+              "| test acc:", round(pipe.score(X_test, y_test), 4))
+        print("n_support:", pipe["svc"].n_support_)
+
+        #unpack confusion matrix for the comparison table
+        tn, fp, fn, tp = confusion_matrix(y_test, pred).ravel()
+        rows.append({
+            "kernel":         kernel,
+            "class_weight":   cw or "none",
+            "precision":      round(precision_score(y_test, pred), 3),
+            "recall":         round(recall_score(y_test, pred), 3),
+            "f1":             round(f1_score(y_test, pred), 3),
+            "ROC_AUC":        round(roc_auc_score(y_test, score), 4),
+            "PR_AUC":         round(average_precision_score(y_test, score), 4),
+            "missed_pulsars": fn,
+            "false_alarms":   fp,
+            "SVs_class0":     pipe["svc"].n_support_[0],
+            "SVs_class1":     pipe["svc"].n_support_[1],
+        })
+
+##comparing
+comparison = pd.DataFrame(rows)
+print(f"\n{'='*60}\n WEIGHTED vs UNWEIGHTED\n{'='*60}")
+print(comparison.to_string(index=False))
+
+#the tradeoff in plain units: how many extra false alarms per pulsar recovered
+print("\nexchange rate (extra false alarms per additional detection):")
+for kernel in ["linear", "rbf"]:
+    a = comparison[(comparison.kernel == kernel) & (comparison.class_weight == "none")].iloc[0]
+    b = comparison[(comparison.kernel == kernel) & (comparison.class_weight == "balanced")].iloc[0]
+    gained = a.missed_pulsars - b.missed_pulsars
+    cost   = b.false_alarms - a.false_alarms
+    print(f"  {kernel:7s}: +{gained} detections for +{cost} false alarms  ({cost/gained:.1f} per detection)")
+
+comparison.to_csv("pulsar_weight_comparison.csv", index=False)
 
 
 ############################################################## GRIF SEARCH over C and gamma and degree and coeddicient
@@ -109,7 +141,7 @@ pred = best.predict(X_test)
 
 ################################################DIAGNOSTICS###############################################
 
-print("\n BEST MODEL ON TEST ")
+print("\n BEST MODEL ON TEST (F1-optimised, NO class weighting)")
 #making the confusuion matrix
 #           predicted 1     predicted 0
 # Actual 1
@@ -134,5 +166,3 @@ print(summary.to_string())
 
 print("\nbest per kernel:")
 print(summary.loc[summary.groupby("param_svc__kernel")["mean_test_score"].idxmax()])
-
-
