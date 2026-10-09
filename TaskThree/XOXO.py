@@ -200,7 +200,7 @@ def plot_loss(losses, filename="Binary Cross-Entropy Loss.png"):
     #plt.yscale("log")
 
     plt.xlabel("epoch")
-    plt.ylabel("binary cross-entropy loss (log scale)")
+    plt.ylabel("binary cross-entropy loss ")
     plt.title("Training loss of the 2-4-1 MLP on XOR")
     plt.legend()
     plt.grid(True, which="both", alpha=0.3)
