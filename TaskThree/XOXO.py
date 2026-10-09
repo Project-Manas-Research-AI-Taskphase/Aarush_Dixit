@@ -125,7 +125,9 @@ def gradients_check(params, X, Y, eps = 1e-5):
 
             P[idx] = original               
 
+            #takes the effect of goign a tiny lil up and down in eiher direction.
             numeric = (loss_plus - loss_minus) / (2 * eps)
+            #the ones from backprop
             analytic = analytic_grads["d" + key][idx]
 
             denom = max(abs(numeric), abs(analytic), 1e-12)
@@ -140,9 +142,11 @@ def gradients_check(params, X, Y, eps = 1e-5):
 
 ######################THE TRAINING DUN DUN DUNNNNNNNNNN###################3
 def train(params, X, Y, lr = 1, epochs = 10000):
+    losses = [] 
     for epoch in range(epochs + 1):
         A2, cache = forward(params, X)  # Predict
-        loss = cross_entropy_loss(A2, Y)    # Measure lossss    
+        loss = cross_entropy_loss(A2, Y)    # Measure lossss
+        losses.append(loss)                 # save it for plotting later
         grads = backward(params, cache, Y)  # measure grad for everything
 
         for key in params:
@@ -150,8 +154,9 @@ def train(params, X, Y, lr = 1, epochs = 10000):
 
         if epoch % 1000 == 0:
             print(f"epoch {epoch:>5}  loss {loss:.6f}")
-        
-    return params
+
+    # return the losses too, not just the trained params
+    return params, losses
 
 ##############PLOT##########
 def plot_decision_boundary(params, X, Y, filename="xor_decision_boundary.png"):
@@ -181,6 +186,30 @@ def plot_decision_boundary(params, X, Y, filename="xor_decision_boundary.png"):
     #plt.savefig(filename, dpi=150)   
     plt.show()  
 
+def plot_loss(losses, filename="Binary Cross-Entropy Loss.png"):
+    plt.figure(figsize=(7, 4.5))
+    plt.plot(losses, color="tab:blue", linewidth=2, label="training loss")
+
+    # reference line: ln2 is the loss you get by predicting 0.5 for every input.
+    # the curve sitting on this line at the start = the network is still basically linear
+    plt.axhline(np.log(2), color="gray", linestyle="--", linewidth=1,
+                label="ln 2 = 0.693 (predict 0.5 for everything)")
+
+    # log scale cos loss goes from 0.77 to 0.00065 (3 orders of magnitude).
+    # on a normal scale everything after epoch ~1000 looks like a flat line at 0
+    #plt.yscale("log")
+
+    plt.xlabel("epoch")
+    plt.ylabel("binary cross-entropy loss (log scale)")
+    plt.title("Training loss of the 2-4-1 MLP on XOR")
+    plt.legend()
+    plt.grid(True, which="both", alpha=0.3)
+    plt.tight_layout()
+    #plt.savefig(filename, dpi=150)
+    plt.show()
+
+
+
 #RUNNING THE ACTUAL CODEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 if __name__ == "__main__":
     s = input("Enter random seed (Entering diff ones show different cool descision boundaries, ALso only put from R+)(blank = 16, the one in the pic I put16): ").strip()
@@ -192,7 +221,7 @@ if __name__ == "__main__":
         gradients_check(params, X, y)
 
     print("=== Training ===")
-    params = train(params, X, y, lr=1.0, epochs=10000)
+    params, losses = train(params, X, y, lr=1.0, epochs=10000)
 
     print("\n=== Predictions ===")
     A2, _ = forward(params, X)
@@ -205,4 +234,5 @@ if __name__ == "__main__":
         for idx in np.ndindex(params[key].shape):
             print(f"{param_name(key, idx):<8} = {params[key][idx]: .4f}")
 
+    plot_loss(losses)
     plot_decision_boundary(params, X, y)
