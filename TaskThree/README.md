@@ -8,22 +8,21 @@ cos the doctor at the end of 3B1B said its the preffered one now cos of reasons 
 Also have to finish PyTorch.
 I didnt do anything fancy most of what and why is mentioned as coments in the code itself.
 I guess I did the initialisation where I divided by root2 and root 4 based on matrix size, so that the values of weights are not saturating the sigmoid at the start
-Loss kinda sits around for a while when its at ln2. 
+Loss kinda sits around for a while when its at ln2. BEcause thats the loss for predicting 0.5 for everything wich is the best a linear model can do and it drops when the model starts getting sepcialized.
 
 
 #############################################MNiST Hell#####################################################
 So the MNIST Neural network, I did (input)784-128-64-10(output) 
 I mainly did another layer cos I wanted to try multiple layers. 
-I did ReLU as the activation functions for the hidden layers, cross-entropy for the error function, softmax got applied internally. Did SGD to cut computation.
+I did ReLU as the activation functions for the hidden layers, cross-entropy for the error function, softmax got applied internally. Did SGD with minibacth to cut computation.
 weird ass idx files btw eh
 During loss for validation was lowest at epoch 4 but trainin kept falling which would show it started memorizing instead of generalizing
-I played around with the number of epochs and learing rate mainly lowering lr and increasing epoch. I also played with the seed,
-and got around the same accuracy mostly below so I think the max capablity the model has is 97.94 only.
-Also I took 16 as the seed cos my bday
+I played around with the number of epochs and learning rate, mainly lowering lr and increasing epochs. I also played with the seed,
+and got around the same accuracy mostly (95-98ish) so I think the max capability the model has is around 97.94, which the model I submitted has 
+Also I took 16 as the seed cos my bday no special reason
 ALSO, it was 97.94% accurate so yeah
 
-almost all the mistake ones included that damned 0 that looks like a 6. Its not even the models fault, altho it made some pretty bad mistakes a few times.
+almost all the mistake graphs  included that damned 0 that looks like a 6. Its not even the models fault, altho it made some pretty bad mistakes a few times.
 THe model knows no clue of which pixels are neighbors which are years apart so it cant tell apart why wed think theyre obv diff. I think.
-I kinda got lost in playing with the epochs
 
-Honestly I did get hekp from CLaude, PyTorch is very confusing to me. But I went block by block asked it to explain and did my best to understand whats what.
+Honestly I did get help from CLaude, PyTorch is very confusing to me. But I went block by block asked it to explain and did my best to understand whats what.
