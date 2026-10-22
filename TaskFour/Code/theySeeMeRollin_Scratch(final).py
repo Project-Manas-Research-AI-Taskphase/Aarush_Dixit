@@ -25,14 +25,14 @@ OPTIMIZER = "MOM"
 LR = {"SGD": 0.01, "MOM": 0.1, "ADAM": 0.001, "ADAMW": 0.001}[OPTIMIZER]
 
 #SCHEDULER = "COSINE"
-SCHEDULER = "STEP" 
-#SCHEDULER = "EXPONENTIAL"
+#SCHEDULER = "STEP" 
+SCHEDULER = "EXPONENTIAL"
 #SCHEDULER = "NONE"
 
 MOMENTUM   = 0.9 #used by MOM
-STEP_EVERY = 6 #STEPLR - drop the lr every 5 epochs
+STEP_EVERY = 6 #STEPLR - drop the lr every n epochs
 GAMMA      = 0.1 #by this factor
-EXPFACTOR = 0.85 #exponential a to be raised and multiplied
+EXPFACTOR = 0.85 if SCHEDULER == "EXPONENTIAL" else 1 #exponential a to be raised and multiplied
 LAMBDA = 0.18 #factor to raise e to in exponential
 
 WD_ON = False
@@ -257,7 +257,7 @@ def run(epochs, seed):
             best_val_acc, best_epoch = val_acc[-1], i + 1 #epochs counted from 1
             best_state = {k: t_.detach().clone() for k, t_ in model.state_dict().items()}
 
-        print(f'epoch {i+1} | lr {lr:.5f} | train loss {train_losses[-1]:.4f} (running {train_run_losses[-1]:.4f}) '
+        print(f'epoch {i+1} | lr {lr:.5f} | Exponential Factor {EXPFACTOR} | train loss {train_losses[-1]:.4f} (running {train_run_losses[-1]:.4f}) '
               f'| val loss {val_losses[-1]:.4f} | train acc {train_acc[-1]:.2f}% | val acc {val_acc[-1]:.2f}%')
 
     print(f'Duration: {(time.time() - start_time)/60:.2f} mins')
