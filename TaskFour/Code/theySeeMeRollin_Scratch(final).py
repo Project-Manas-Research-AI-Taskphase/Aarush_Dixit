@@ -17,20 +17,23 @@ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 #keep one line uncommented in each thing
 
 #OPTIMIZER = "SGD"
-#OPTIMIZER = "MOM"
-OPTIMIZER = "ADAM"
+OPTIMIZER = "MOM"
+#OPTIMIZER = "ADAM"
 #OPTIMIZER = "ADAMW"
 
 #LEarning rate (Try 0.01 for Momentum, 0.001 for adam/adamW)
 LR = {"SGD": 0.01, "MOM": 0.1, "ADAM": 0.001, "ADAMW": 0.001}[OPTIMIZER]
 
 #SCHEDULER = "COSINE"
-#SCHEDULER = "STEP"
-SCHEDULER = "NONE"
+SCHEDULER = "STEP" 
+#SCHEDULER = "EXPONENTIAL"
+#SCHEDULER = "NONE"
 
 MOMENTUM   = 0.9 #used by MOM
-STEP_EVERY = 5 #STEPLR - drop the lr every 5 epochs
+STEP_EVERY = 6 #STEPLR - drop the lr every 5 epochs
 GAMMA      = 0.1 #by this factor
+EXPFACTOR = 0.85 #exponential a to be raised and multiplied
+LAMBDA = 0.18 #factor to raise e to in exponential
 
 WD_ON = False
 WD = {"SGD": 5e-4, "MOM": 5e-4, "ADAM": 5e-4, "ADAMW": 0.01}[OPTIMIZER]
@@ -39,6 +42,7 @@ if not WD_ON:
 
 P  = 0 #dropout: chance of dropping a neuron, 0 = off
 BATCHNORM = False #False = off
+
 
 EPOCHS = 19
 SEEDS  = [0]
@@ -99,6 +103,9 @@ def get_lr(epoch):
         return LR * GAMMA ** (epoch // STEP_EVERY)
     if SCHEDULER == "COSINE":
         return 0.5 * LR * (1 + math.cos(math.pi * epoch / EPOCHS))
+    if SCHEDULER == "EXPONENTIAL":
+            return LR * (EXPFACTOR**epoch)
+            # return LR * math.exp(-LAMBDA * epoch)
     return LR
 
 ##################################DROPOUT + BATCHNORM######################
@@ -141,10 +148,10 @@ class multiLayerPerceptron(nn.Module):
 
     def __init__(self, input_size = 32*32*3, output_size = 10):
         super().__init__()
-        self.fc1 = nn.Linear(input_size, 1024)
-        self.fc2 = nn.Linear(1024, 512)
-        self.fc3 = nn.Linear(512, 128)
-        self.fc4 = nn.Linear(128, output_size)
+        self.fc1 = nn.Linear(input_size, 1024, bias=not BATCHNORM)
+        self.fc2 = nn.Linear(1024, 512, bias=not BATCHNORM)
+        self.fc3 = nn.Linear(512, 128, bias=not BATCHNORM)
+        self.fc4 = nn.Linear(128, output_size, bias=not BATCHNORM)
 
         if BATCHNORM:
             self.bn1 = BatchNorm(1024)
