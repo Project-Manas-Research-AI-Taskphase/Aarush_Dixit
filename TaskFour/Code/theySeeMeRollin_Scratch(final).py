@@ -1,3 +1,5 @@
+##CHANGE SETTINGS TO CHANGE MODEL
+
 # IMPOrt LIB
 import numpy as np
 import matplotlib.pyplot as plt
@@ -17,16 +19,16 @@ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 #keep one line uncommented in each thing
 
 #OPTIMIZER = "SGD"
-OPTIMIZER = "MOM"
+#OPTIMIZER = "MOM"
 #OPTIMIZER = "ADAM"
-#OPTIMIZER = "ADAMW"
+OPTIMIZER = "ADAMW"
 
 #LEarning rate (Try 0.01 for Momentum, 0.001 for adam/adamW)
-LR = {"SGD": 0.01, "MOM": 0.1, "ADAM": 0.001, "ADAMW": 0.001}[OPTIMIZER]
+LR = {"SGD": 0.01, "MOM": 0.01, "ADAM": 0.0003, "ADAMW": 0.003}[OPTIMIZER]
 
-#SCHEDULER = "COSINE"
+SCHEDULER = "COSINE"
 #SCHEDULER = "STEP" 
-SCHEDULER = "EXPONENTIAL"
+#SCHEDULER = "EXPONENTIAL"
 #SCHEDULER = "NONE"
 
 MOMENTUM   = 0.9 #used by MOM
@@ -35,13 +37,13 @@ GAMMA      = 0.1 #by this factor
 EXPFACTOR = 0.85 if SCHEDULER == "EXPONENTIAL" else 1 #exponential a to be raised and multiplied
 LAMBDA = 0.18 #factor to raise e to in exponential
 
-WD_ON = False
-WD = {"SGD": 5e-4, "MOM": 5e-4, "ADAM": 5e-4, "ADAMW": 0.01}[OPTIMIZER]
+WD_ON = True
+WD = {"SGD": 5e-4, "MOM": 5e-4, "ADAM": 5e-4, "ADAMW": 0.004}[OPTIMIZER]
 if not WD_ON:
     WD = 0.0
 
 P  = 0 #dropout: chance of dropping a neuron, 0 = off
-BATCHNORM = False #False = off
+BATCHNORM = True #False = off
 
 
 EPOCHS = 19
@@ -151,7 +153,7 @@ class multiLayerPerceptron(nn.Module):
         self.fc1 = nn.Linear(input_size, 1024, bias=not BATCHNORM)
         self.fc2 = nn.Linear(1024, 512, bias=not BATCHNORM)
         self.fc3 = nn.Linear(512, 128, bias=not BATCHNORM)
-        self.fc4 = nn.Linear(128, output_size, bias=not BATCHNORM)
+        self.fc4 = nn.Linear(128, output_size)
 
         if BATCHNORM:
             self.bn1 = BatchNorm(1024)
@@ -384,7 +386,16 @@ if __name__ == "__main__":
         tests = [r["test_acc"] for r in results]
         print(f"test acc (best-val ckpt): {np.mean(tests):.2f} ± {np.std(tests):.2f}%")
 
-    name = f"{OPTIMIZER}_lr{LR}_{SCHEDULER}_wd{WD}_p{P}_bn{BATCHNORM}_ep{EPOCHS}" + ("_TEST" if EVAL_TEST else "")
+    if SCHEDULER == "STEP":
+        sched = f"STEP{STEP_EVERY}x{GAMMA}"
+    elif SCHEDULER == "EXPONENTIAL":
+        sched = f"EXP{EXPFACTOR}"
+    else:
+        sched = SCHEDULER
+
+    name = (f"{OPTIMIZER}_lr{LR}_{sched}_wd{WD}_p{P}_bn{BATCHNORM}_ep{EPOCHS}_s{'-'.join(map(str, SEEDS))}"
+            + ("_TEST" if EVAL_TEST else ""))
+    
     os.makedirs("results", exist_ok=True)
     with open(f"results/{name}.json", "w") as f:
         json.dump(results, f, indent=2)
