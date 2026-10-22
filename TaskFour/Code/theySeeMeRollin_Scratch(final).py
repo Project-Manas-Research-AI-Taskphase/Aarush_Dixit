@@ -28,17 +28,17 @@ LR = {"SGD": 0.01, "MOM": 0.1, "ADAM": 0.001, "ADAMW": 0.001}[OPTIMIZER]
 #SCHEDULER = "STEP"
 SCHEDULER = "NONE"
 
-MOMENTUM   = 0.9       #used by MOM
-STEP_EVERY = 5         #STEPLR - drop the lr every 5 epochs
-GAMMA      = 0.1       #by this factor
+MOMENTUM   = 0.9 #used by MOM
+STEP_EVERY = 5 #STEPLR - drop the lr every 5 epochs
+GAMMA      = 0.1 #by this factor
 
 WD_ON = False
 WD = {"SGD": 5e-4, "MOM": 5e-4, "ADAM": 5e-4, "ADAMW": 0.01}[OPTIMIZER]
 if not WD_ON:
     WD = 0.0
 
-P  = 0               #dropout: chance of dropping a neuron, 0 = off
-BATCHNORM = False       #False = off
+P  = 0 #dropout: chance of dropping a neuron, 0 = off
+BATCHNORM = False #False = off
 
 EPOCHS = 19
 SEEDS  = [0]
