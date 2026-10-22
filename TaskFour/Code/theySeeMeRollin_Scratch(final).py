@@ -14,7 +14,7 @@ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
 
 ##################################### SETTINGS #####################################
-# keep one line uncommented in each thing
+#keep one line uncommented in each thing
 
 #OPTIMIZER = "SGD"
 #OPTIMIZER = "MOM"
@@ -29,16 +29,16 @@ LR = {"SGD": 0.01, "MOM": 0.1, "ADAM": 0.001, "ADAMW": 0.001}[OPTIMIZER]
 SCHEDULER = "NONE"
 
 MOMENTUM   = 0.9       #used by MOM
-STEP_EVERY = 5         # STEPLR - drop the lr every 5 epochs
-GAMMA      = 0.1       # by this factor
+STEP_EVERY = 5         #STEPLR - drop the lr every 5 epochs
+GAMMA      = 0.1       #by this factor
 
 WD_ON = False
 WD = {"SGD": 5e-4, "MOM": 5e-4, "ADAM": 5e-4, "ADAMW": 0.01}[OPTIMIZER]
 if not WD_ON:
     WD = 0.0
 
-P  = 0               # dropout: chance of dropping a neuron, 0 = off
-BATCHNORM = False       # False = off
+P  = 0               #dropout: chance of dropping a neuron, 0 = off
+BATCHNORM = False       #False = off
 
 EPOCHS = 19
 SEEDS  = [0]
@@ -79,9 +79,6 @@ transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize(mean
 cifar10_train_full.transform = transform
 cifar10_test.transform = transform
 
-# FIX 2: a fixed 5000-image slice of the TRAINING set (same images every epoch, every seed).
-# It is only ever run through evaluate(), i.e. model.eval(): no dropout, BN uses running stats, weights frozen.
-# That makes it directly comparable to the val curve.
 g_te = torch.Generator().manual_seed(16)
 train_eval_idx = torch.randperm(len(cifar10_train), generator=g_te)[:TRAIN_EVAL_SIZE].tolist()
 cifar10_train_eval = Subset(cifar10_train, train_eval_idx)
@@ -125,10 +122,10 @@ class BatchNorm(nn.Module):
     def forward(self, x):
         if self.training:
             mean = x.mean(0)
-            var  = ((x - mean) ** 2).mean(0) # biased var: still used to normalise THIS batch
+            var  = ((x - mean) ** 2).mean(0) #biased var: still used to normalise THIS batch
             n = x.size(0)
             self.running_mean = 0.9 * self.running_mean + 0.1 * mean.detach()
-            self.running_var  = 0.9 * self.running_var  + 0.1 * var.detach() * n / (n - 1) # unbiased for test time
+            self.running_var  = 0.9 * self.running_var  + 0.1 * var.detach() * n / (n - 1) #unbiased for test time
         else:
             mean, var = self.running_mean, self.running_var
 
@@ -163,7 +160,7 @@ class multiLayerPerceptron(nn.Module):
         return X
 
     def forward(self, X):
-        X = X.view(X.size(0), -1)                       # (B,3,32,32) -> (B,3072)
+        X = X.view(X.size(0), -1)                       #(B,3,32,32) -> (B,3072)
         X = self.hidden(X, self.fc1, self.bn1 if BATCHNORM else None)
         X = self.hidden(X, self.fc2, self.bn2 if BATCHNORM else None)
         X = self.hidden(X, self.fc3, self.bn3 if BATCHNORM else None)
@@ -180,10 +177,10 @@ def run(epochs, seed):
     criterion = nn.CrossEntropyLoss()
 
     params   = list(model.parameters())
-    velocity = [torch.zeros_like(p) for p in params]   # MOM
-    m        = [torch.zeros_like(p) for p in params]   # ADAM: avg gradient
-    v        = [torch.zeros_like(p) for p in params]   # ADAM: avg squared gradient
-    t = 0                                              # ADAM: step counter
+    velocity = [torch.zeros_like(p) for p in params]   #MOM
+    m        = [torch.zeros_like(p) for p in params]   #ADAM: avg gradient
+    v        = [torch.zeros_like(p) for p in params]   #ADAM: avg squared gradient
+    t = 0                                              #ADAM: step counter
     b1, b2, eps = 0.9, 0.999, 1e-8
 
     train_losses, train_acc = [], []
@@ -241,7 +238,6 @@ def run(epochs, seed):
         train_run_losses.append(trn_loss_sum / len(cifar10_train))
         train_run_acc.append(trn_corr * 100 / len(cifar10_train))
 
-        # FIX 2: same function, same mode as val
         tr_loss, tr_corr = evaluate(model, train_eval_loader)
         train_losses.append(tr_loss)
         train_acc.append(tr_corr * 100 / len(cifar10_train_eval))
