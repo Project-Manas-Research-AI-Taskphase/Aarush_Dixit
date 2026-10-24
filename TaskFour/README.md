@@ -11,3 +11,15 @@ Uh the model started to underfit, it takes so much time to run the code and I de
 
 I'll soon add a run of 3 seeds with like 30 epochs and 0.5 dropout etc and show the numbers cos. Also add the scracth version cos ofc
 well it took like an hour for that one run which I uploaded js now with 3 seeds. It was so bad, it didnt learn,the lr mightve been too much I though 30 epochs 0.002 wpuld be better apparently not, ot maybe it was dropout 0.4%
+
+###################################################################################################################################################
+Ok so I put the experimennts results, I mean I had done them the thu night itself they take so long omg.
+Anyway,
+I only did one seed cos again they take so much time, I need a new laptop.
+I did a MOM 0.001 like a base to see how it changed with other stuff. and uhh I did a lot of experiments im not sure how to phrase the results which is why it took me time to just put the results here but, time is running out.
+when I changed LR to 0.1 it didnt even learn the loss erratically went up and down. accuracy too. THe best result with Adam came from 0.0003 lr. and sgd with 0.1 lr was similar to 0.01 mom. SGD 0.01 was still training at the end of 19 epochs
+
+dropout 0.3 had huge effect comparitvely to the rest, BN started faster but overfitted i think. drop out 0.5 underfitted
+
+Step and cosine had a real impact in LR schedules.
+
