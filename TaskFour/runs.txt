@@ -1,0 +1,970 @@
+EXP 1
+
+SGD lr 0.01 | NONE | wd 0.0 | dropout 0 | batchnorm False | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.01000 | train loss 2.0463 (running 2.1941) | val loss 2.0395 | train acc 27.92% | val acc 28.40%
+epoch 2 | lr 0.01000 | train loss 1.8354 (running 1.9214) | val loss 1.8267 | train acc 34.68% | val acc 35.58%
+epoch 3 | lr 0.01000 | train loss 1.7153 (running 1.7666) | val loss 1.7232 | train acc 38.94% | val acc 38.92%
+epoch 4 | lr 0.01000 | train loss 1.6331 (running 1.6702) | val loss 1.6464 | train acc 41.36% | val acc 41.38%
+epoch 5 | lr 0.01000 | train loss 1.5676 (running 1.6009) | val loss 1.5909 | train acc 44.96% | val acc 43.54%
+epoch 6 | lr 0.01000 | train loss 1.5139 (running 1.5422) | val loss 1.5455 | train acc 46.68% | val acc 45.48%
+epoch 7 | lr 0.01000 | train loss 1.4658 (running 1.4874) | val loss 1.5129 | train acc 48.96% | val acc 46.08%
+epoch 8 | lr 0.01000 | train loss 1.4070 (running 1.4358) | val loss 1.4771 | train acc 50.60% | val acc 47.58%
+epoch 9 | lr 0.01000 | train loss 1.3626 (running 1.3896) | val loss 1.4532 | train acc 52.84% | val acc 49.14%
+epoch 10 | lr 0.01000 | train loss 1.3417 (running 1.3450) | val loss 1.4527 | train acc 52.90% | val acc 49.54%
+epoch 11 | lr 0.01000 | train loss 1.2780 (running 1.3058) | val loss 1.4172 | train acc 55.86% | val acc 51.26%
+epoch 12 | lr 0.01000 | train loss 1.2606 (running 1.2661) | val loss 1.4211 | train acc 55.92% | val acc 50.74%
+epoch 13 | lr 0.01000 | train loss 1.2147 (running 1.2284) | val loss 1.4017 | train acc 58.10% | val acc 51.54%
+epoch 14 | lr 0.01000 | train loss 1.1679 (running 1.1925) | val loss 1.3932 | train acc 59.28% | val acc 52.34%
+epoch 15 | lr 0.01000 | train loss 1.1855 (running 1.1589) | val loss 1.4380 | train acc 59.54% | val acc 51.34%
+epoch 16 | lr 0.01000 | train loss 1.0844 (running 1.1254) | val loss 1.3670 | train acc 63.04% | val acc 52.92%
+epoch 17 | lr 0.01000 | train loss 1.1220 (running 1.0900) | val loss 1.4426 | train acc 60.86% | val acc 50.60%
+epoch 18 | lr 0.01000 | train loss 1.0512 (running 1.0591) | val loss 1.4199 | train acc 63.02% | val acc 51.24%
+epoch 19 | lr 0.01000 | train loss 1.0029 (running 1.0281) | val loss 1.3942 | train acc 65.40% | val acc 52.72%
+Duration: 7.48 mins
+restored best epoch 16 (val acc 52.92%)
+
+best val acc:             52.92 ± 0.00%  (epochs [16])
+final val - train loss:   0.3912 ± 0.0000  (both eval mode)
+[[303  17  19  13  17   9   7   6  83  38]
+ [ 29 298   7   9   8   1  12   7  55  82]
+ [ 54   5 171  23  80  41  50  31  13  12]
+ [ 19   6  39 135  31 101  68  45  23  34]
+ [ 35   2  57  13 239  29  32  42  23  14]
+ [ 17   9  45  65  44 213  49  47  18  14]
+ [  7   8  34  26  53  29 299  16   7  11]
+ [ 30   3  26  21  33  34  14 315  16  33]
+ [ 39  22   7   9   4   2   3   3 401  24]
+ [ 16  71  12   7   2   7   8  16  52 272]]
+
+__________________________________________________________________________________________________________________________________
+
+
+EXP 2: seed0,wd0,sgd,momentum 0.9,no l2 no dropout
+
+========== seed 0 ==========
+epoch 1 | lr 0.01000 | train loss 1.5408 (running 1.7861) | val loss 1.5751 | train acc 44.80% | val acc 43.78%
+epoch 2 | lr 0.01000 | train loss 1.3375 (running 1.4754) | val loss 1.4461 | train acc 53.90% | val acc 49.00%
+epoch 3 | lr 0.01000 | train loss 1.2249 (running 1.3421) | val loss 1.4050 | train acc 56.98% | val acc 50.08%
+epoch 4 | lr 0.01000 | train loss 1.1501 (running 1.2404) | val loss 1.4004 | train acc 59.08% | val acc 51.52%
+epoch 5 | lr 0.01000 | train loss 1.0459 (running 1.1529) | val loss 1.3665 | train acc 62.56% | val acc 52.30%
+epoch 6 | lr 0.01000 | train loss 0.9626 (running 1.0745) | val loss 1.3521 | train acc 65.84% | val acc 53.80%
+epoch 7 | lr 0.01000 | train loss 0.8942 (running 0.9927) | val loss 1.3824 | train acc 69.50% | val acc 52.58%
+epoch 8 | lr 0.01000 | train loss 0.8508 (running 0.9135) | val loss 1.4984 | train acc 69.02% | val acc 52.46%
+epoch 9 | lr 0.01000 | train loss 0.7302 (running 0.8403) | val loss 1.4177 | train acc 75.70% | val acc 53.38%
+epoch 10 | lr 0.01000 | train loss 0.6520 (running 0.7664) | val loss 1.5057 | train acc 77.98% | val acc 53.80%
+epoch 11 | lr 0.01000 | train loss 0.6140 (running 0.6962) | val loss 1.6088 | train acc 78.64% | val acc 52.84%
+epoch 12 | lr 0.01000 | train loss 0.5294 (running 0.6321) | val loss 1.6039 | train acc 82.24% | val acc 53.78%
+epoch 13 | lr 0.01000 | train loss 0.5167 (running 0.5640) | val loss 1.7262 | train acc 81.84% | val acc 53.14%
+epoch 14 | lr 0.01000 | train loss 0.4708 (running 0.5088) | val loss 1.8586 | train acc 83.18% | val acc 52.58%
+epoch 15 | lr 0.01000 | train loss 0.3805 (running 0.4577) | val loss 1.8986 | train acc 87.24% | val acc 52.90%
+epoch 16 | lr 0.01000 | train loss 0.3210 (running 0.4158) | val loss 1.9734 | train acc 89.38% | val acc 53.82%
+epoch 17 | lr 0.01000 | train loss 0.2720 (running 0.3779) | val loss 2.0200 | train acc 90.58% | val acc 54.26%
+epoch 18 | lr 0.01000 | train loss 0.2862 (running 0.3355) | val loss 2.2009 | train acc 90.20% | val acc 53.56%
+epoch 19 | lr 0.01000 | train loss 0.3050 (running 0.2997) | val loss 2.2873 | train acc 89.64% | val acc 53.66%
+Duration: 7.34 mins
+restored best epoch 17 (val acc 54.26%)
+
+best val acc:             54.26 ± 0.00%  (epochs [17])
+final val - train loss:   1.9824 ± 0.0000  (both eval mode)
+[[303  24  26  15  33  11  10   6  48  36]
+ [ 27 286   9  15   7   5   9   4  38 108]
+ [ 36   8 177  37  84  50  53  23   5   7]
+ [ 14   8  34 192  28 106  56  21  16  26]
+ [ 15   4  53  22 280  31  35  22  14  10]
+ [  8   7  35  94  45 240  36  31   8  17]
+ [  3   7  32  49  29  38 306  11   5  10]
+ [ 22   9  22  39  63  49  15 274   3  29]
+ [ 63  16   8  16  14   6   4   3 352  32]
+ [ 22  54  11  13   2  12   9   6  31 303]]
+
+
+__________________________________________________________________________________________________________________________________
+
+EXP3
+
+SGD lr 0.1 | NONE | wd 0.0 | dropout 0 | batchnorm False | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.10000 | train loss 1.5750 (running 1.7688) | val loss 1.6087 | train acc 43.80% | val acc 42.64%
+epoch 2 | lr 0.10000 | train loss 1.4677 (running 1.4940) | val loss 1.5711 | train acc 48.48% | val acc 43.84%
+epoch 3 | lr 0.10000 | train loss 1.2854 (running 1.3735) | val loss 1.4488 | train acc 53.94% | val acc 48.96%
+epoch 4 | lr 0.10000 | train loss 1.2546 (running 1.2760) | val loss 1.4868 | train acc 55.36% | val acc 48.10%
+epoch 5 | lr 0.10000 | train loss 1.0827 (running 1.1916) | val loss 1.3626 | train acc 61.20% | val acc 51.54%
+epoch 6 | lr 0.10000 | train loss 1.1052 (running 1.1083) | val loss 1.4418 | train acc 61.08% | val acc 51.32%
+epoch 7 | lr 0.10000 | train loss 0.9580 (running 1.0373) | val loss 1.3873 | train acc 67.20% | val acc 52.70%
+epoch 8 | lr 0.10000 | train loss 0.8912 (running 0.9633) | val loss 1.4825 | train acc 68.84% | val acc 52.36%
+epoch 9 | lr 0.10000 | train loss 0.8507 (running 0.8906) | val loss 1.4645 | train acc 70.34% | val acc 52.74%
+epoch 10 | lr 0.10000 | train loss 0.8394 (running 0.8155) | val loss 1.6015 | train acc 70.52% | val acc 50.78%
+epoch 11 | lr 0.10000 | train loss 0.6933 (running 0.7536) | val loss 1.5738 | train acc 75.00% | val acc 51.84%
+epoch 12 | lr 0.10000 | train loss 0.6824 (running 0.6824) | val loss 1.6199 | train acc 76.16% | val acc 52.24%
+epoch 13 | lr 0.10000 | train loss 0.5972 (running 0.6145) | val loss 1.7001 | train acc 78.26% | val acc 52.86%
+epoch 14 | lr 0.10000 | train loss 0.5073 (running 0.5542) | val loss 1.7630 | train acc 81.48% | val acc 52.48%
+epoch 15 | lr 0.10000 | train loss 0.4595 (running 0.4947) | val loss 1.9016 | train acc 83.76% | val acc 53.18%
+epoch 16 | lr 0.10000 | train loss 0.4853 (running 0.4455) | val loss 1.9373 | train acc 83.28% | val acc 53.36%
+epoch 17 | lr 0.10000 | train loss 0.7024 (running 0.4008) | val loss 2.4046 | train acc 77.52% | val acc 51.40%
+epoch 18 | lr 0.10000 | train loss 0.5411 (running 0.3643) | val loss 2.4275 | train acc 82.18% | val acc 50.12%
+epoch 19 | lr 0.10000 | train loss 0.4481 (running 0.3192) | val loss 2.4545 | train acc 84.66% | val acc 51.82%
+Duration: 6.64 mins
+restored best epoch 16 (val acc 53.36%)
+
+best val acc:             53.36 ± 0.00%  (epochs [16])
+final val - train loss:   2.0064 ± 0.0000  (both eval mode)
+[[311  14  35   2  14  11  12  17  68  28]
+ [ 21 322  11   5   2  11   7  10  60  59]
+ [ 37   8 207  12  32  72  52  38  16   6]
+ [ 18   7  24  59  22 197  75  58  13  28]
+ [ 28   6  77   4 173  62  47  59  21   9]
+ [ 13   4  32  13  25 314  36  59   9  16]
+ [ 14   3  39  12  22  67 297  16  10  10]
+ [ 23   6  24   8  25  46  17 345  11  20]
+ [ 42  22   6   4   6  11   5  10 386  22]
+ [ 19  80   5   4   1  15  10  20  55 254]]
+
+__________________________________________________________________________________________________________________________________
+
+
+ EXP4
+ MOM lr 0.1 | NONE | wd 0.0 | dropout 0 | batchnorm False | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.10000 | train loss 1.7274 (running 1.8012) | val loss 1.7689 | train acc 38.52% | val acc 36.98%
+epoch 2 | lr 0.10000 | train loss 1.7461 (running 1.6951) | val loss 1.8243 | train acc 37.18% | val acc 35.68%
+epoch 3 | lr 0.10000 | train loss 1.6742 (running 1.6909) | val loss 1.7832 | train acc 43.02% | val acc 39.94%
+epoch 4 | lr 0.10000 | train loss 1.6561 (running 1.6944) | val loss 1.7551 | train acc 40.50% | val acc 38.06%
+epoch 5 | lr 0.10000 | train loss 1.6301 (running 1.6865) | val loss 1.7943 | train acc 45.04% | val acc 41.92%
+epoch 6 | lr 0.10000 | train loss 1.6799 (running 1.7098) | val loss 1.8091 | train acc 39.32% | val acc 36.24%
+epoch 7 | lr 0.10000 | train loss 1.6886 (running 1.6882) | val loss 1.8039 | train acc 40.04% | val acc 37.92%
+epoch 8 | lr 0.10000 | train loss 1.5936 (running 1.6831) | val loss 1.7639 | train acc 43.74% | val acc 38.60%
+epoch 9 | lr 0.10000 | train loss 1.6785 (running 1.6759) | val loss 1.8161 | train acc 38.44% | val acc 35.66%
+epoch 10 | lr 0.10000 | train loss 1.5944 (running 1.6955) | val loss 1.7866 | train acc 43.72% | val acc 40.32%
+epoch 11 | lr 0.10000 | train loss 1.7779 (running 1.6862) | val loss 1.9383 | train acc 40.20% | val acc 37.22%
+epoch 12 | lr 0.10000 | train loss 1.7747 (running 1.7386) | val loss 1.9424 | train acc 37.00% | val acc 34.00%
+epoch 13 | lr 0.10000 | train loss 1.8291 (running 1.7714) | val loss 1.9630 | train acc 35.30% | val acc 31.68%
+epoch 14 | lr 0.10000 | train loss 1.6544 (running 1.7414) | val loss 1.8743 | train acc 41.74% | val acc 37.42%
+epoch 15 | lr 0.10000 | train loss 1.6771 (running 1.7263) | val loss 1.9749 | train acc 40.46% | val acc 36.20%
+epoch 16 | lr 0.10000 | train loss 1.8063 (running 1.7604) | val loss 1.9631 | train acc 36.10% | val acc 33.22%
+epoch 17 | lr 0.10000 | train loss 1.7131 (running 1.7585) | val loss 1.9318 | train acc 38.80% | val acc 33.10%
+epoch 18 | lr 0.10000 | train loss 1.6944 (running 1.7516) | val loss 1.9243 | train acc 40.08% | val acc 34.40%
+epoch 19 | lr 0.10000 | train loss 1.7662 (running 1.8107) | val loss 1.9608 | train acc 36.68% | val acc 32.78%
+Duration: 8.15 mins
+restored best epoch 5 (val acc 41.92%)
+
+best val acc:             41.92 ± 0.00%  (epochs [5])
+final val - train loss:   0.1946 ± 0.0000  (both eval mode)
+[[242  34  49  39  14  13   8   8  56  49]
+ [ 16 227  27  29   8   4   8   4  66 119]
+ [ 45  15 240  49  36  21  27  27   9  11]
+ [ 10  15 126 173  26  61  36  22  12  20]
+ [ 29   6 205  37 122  12  14  35   8  18]
+ [  7   8 136 128  27 123  49  20   9  14]
+ [  2  17 178  56  33  30 145  13   6  10]
+ [ 15   9  85  51  59  20  12 234   9  31]
+ [ 57  20  16  37   4   5   2   3 317  53]
+ [ 20  54  21  25   5   8   9  19  29 273]]
+
+
+__________________________________________________________________________________________________________________________________
+
+
+EXP5
+
+ADAM lr 0.001 | NONE | wd 0.0 | dropout 0 | batchnorm False | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.00100 | train loss 1.4941 (running 1.6730) | val loss 1.5611 | train acc 47.02% | val acc 44.46%
+epoch 2 | lr 0.00100 | train loss 1.3152 (running 1.4640) | val loss 1.4433 | train acc 53.78% | val acc 49.48%
+epoch 3 | lr 0.00100 | train loss 1.2362 (running 1.3423) | val loss 1.4288 | train acc 56.00% | val acc 49.84%
+epoch 4 | lr 0.00100 | train loss 1.1518 (running 1.2420) | val loss 1.4231 | train acc 59.40% | val acc 51.54%
+epoch 5 | lr 0.00100 | train loss 1.0491 (running 1.1534) | val loss 1.3986 | train acc 62.48% | val acc 52.54%
+epoch 6 | lr 0.00100 | train loss 0.9792 (running 1.0749) | val loss 1.4046 | train acc 65.40% | val acc 52.44%
+epoch 7 | lr 0.00100 | train loss 0.9040 (running 0.9933) | val loss 1.4454 | train acc 67.22% | val acc 52.10%
+epoch 8 | lr 0.00100 | train loss 0.8158 (running 0.9219) | val loss 1.4882 | train acc 70.12% | val acc 52.66%
+epoch 9 | lr 0.00100 | train loss 0.7426 (running 0.8444) | val loss 1.5082 | train acc 73.06% | val acc 52.04%
+epoch 10 | lr 0.00100 | train loss 0.6745 (running 0.7736) | val loss 1.6329 | train acc 76.44% | val acc 52.92%
+epoch 11 | lr 0.00100 | train loss 0.6178 (running 0.7013) | val loss 1.7176 | train acc 77.78% | val acc 53.60%
+epoch 12 | lr 0.00100 | train loss 0.5273 (running 0.6457) | val loss 1.7222 | train acc 81.58% | val acc 53.18%
+epoch 13 | lr 0.00100 | train loss 0.5046 (running 0.5960) | val loss 1.8958 | train acc 81.86% | val acc 53.42%
+epoch 14 | lr 0.00100 | train loss 0.4591 (running 0.5406) | val loss 2.0176 | train acc 82.96% | val acc 53.38%
+epoch 15 | lr 0.00100 | train loss 0.4211 (running 0.5033) | val loss 2.1318 | train acc 85.52% | val acc 53.02%
+epoch 16 | lr 0.00100 | train loss 0.4053 (running 0.4730) | val loss 2.2033 | train acc 85.92% | val acc 53.08%
+epoch 17 | lr 0.00100 | train loss 0.3466 (running 0.4296) | val loss 2.2848 | train acc 87.94% | val acc 53.28%
+epoch 18 | lr 0.00100 | train loss 0.3303 (running 0.4030) | val loss 2.3333 | train acc 88.44% | val acc 53.16%
+epoch 19 | lr 0.00100 | train loss 0.3213 (running 0.3662) | val loss 2.4602 | train acc 88.58% | val acc 52.98%
+Duration: 12.49 mins
+restored best epoch 11 (val acc 53.60%)
+
+best val acc:             53.60 ± 0.00%  (epochs [11])
+final val - train loss:   2.1389 ± 0.0000  (both eval mode)
+[[252  27  18  11  21  15   8  21 102  37]
+ [ 20 330   9  12   7   4   8   7  35  76]
+ [ 30  10 190  22  67  50  37  51  14   9]
+ [  9  10  44 160  23 104  67  44  18  22]
+ [ 14   9  56  23 233  33  26  69  16   7]
+ [  6   5  38  98  32 220  41  55  15  11]
+ [  5  10  29  40  46  27 297  19   7  10]
+ [ 19   8  20  26  35  29  16 341   5  26]
+ [ 33  34   7  10   6   3   4   6 375  36]
+ [ 13  77   4  13   4  10   5  19  36 282]]
+
+
+ __________________________________________________________________________________________________________________________________
+
+
+EXP6
+
+
+ADAM lr 0.003 | NONE | wd 0.0 | dropout 0 | batchnorm False | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.00300 | train loss 1.6020 (running 1.7504) | val loss 1.6534 | train acc 42.92% | val acc 41.10%
+epoch 2 | lr 0.00300 | train loss 1.4534 (running 1.5656) | val loss 1.5396 | train acc 48.92% | val acc 45.94%
+epoch 3 | lr 0.00300 | train loss 1.4015 (running 1.4755) | val loss 1.5492 | train acc 51.34% | val acc 46.86%
+epoch 4 | lr 0.00300 | train loss 1.3431 (running 1.4045) | val loss 1.5290 | train acc 51.96% | val acc 46.68%
+epoch 5 | lr 0.00300 | train loss 1.2924 (running 1.3388) | val loss 1.5125 | train acc 53.40% | val acc 47.26%
+epoch 6 | lr 0.00300 | train loss 1.2177 (running 1.2877) | val loss 1.4788 | train acc 56.80% | val acc 49.56%
+epoch 7 | lr 0.00300 | train loss 1.1951 (running 1.2398) | val loss 1.5135 | train acc 57.88% | val acc 47.98%
+epoch 8 | lr 0.00300 | train loss 1.1408 (running 1.1969) | val loss 1.5349 | train acc 59.10% | val acc 48.18%
+epoch 9 | lr 0.00300 | train loss 1.0721 (running 1.1535) | val loss 1.4888 | train acc 62.14% | val acc 49.36%
+epoch 10 | lr 0.00300 | train loss 1.0262 (running 1.1061) | val loss 1.5843 | train acc 63.98% | val acc 50.14%
+epoch 11 | lr 0.00300 | train loss 0.9867 (running 1.0652) | val loss 1.5586 | train acc 65.52% | val acc 50.04%
+epoch 12 | lr 0.00300 | train loss 0.9712 (running 1.0321) | val loss 1.5567 | train acc 65.12% | val acc 49.58%
+epoch 13 | lr 0.00300 | train loss 0.9776 (running 0.9793) | val loss 1.6064 | train acc 66.84% | val acc 49.86%
+epoch 14 | lr 0.00300 | train loss 0.8712 (running 0.9622) | val loss 1.6082 | train acc 68.98% | val acc 50.76%
+epoch 15 | lr 0.00300 | train loss 0.9089 (running 0.9207) | val loss 1.7034 | train acc 67.10% | val acc 49.30%
+epoch 16 | lr 0.00300 | train loss 0.8273 (running 0.8992) | val loss 1.6723 | train acc 70.96% | val acc 51.78%
+epoch 17 | lr 0.00300 | train loss 0.8376 (running 0.8734) | val loss 1.6987 | train acc 70.46% | val acc 50.84%
+epoch 18 | lr 0.00300 | train loss 0.7850 (running 0.8374) | val loss 1.7856 | train acc 71.92% | val acc 50.98%
+epoch 19 | lr 0.00300 | train loss 0.7404 (running 0.7979) | val loss 1.7805 | train acc 73.78% | val acc 51.24%
+Duration: 12.45 mins
+restored best epoch 16 (val acc 51.78%)
+
+best val acc:             51.78 ± 0.00%  (epochs [16])
+final val - train loss:   1.0401 ± 0.0000  (both eval mode)
+[[300  25  27  14  15   6   6  12  72  35]
+ [ 24 334   8   9   9   7   9   3  49  56]
+ [ 47  10 188  46  95  17  31  28  13   5]
+ [ 13   8  45 152  37 123  54  29  22  18]
+ [ 33   4  72  29 236  13  28  46  16   9]
+ [ 13   7  49 119  49 183  34  40  11  16]
+ [  6  10  36  61  58  24 274   9   3   9]
+ [ 24   6  34  30  31  44  11 315   9  21]
+ [ 55  36   6  10   4  10   5   4 363  21]
+ [ 21 102   9   6   6  11  11  16  37 244]]
+
+ __________________________________________________________________________________________________________________________________
+
+
+EXP7
+
+ADAM lr 0.0003 | NONE | wd 0.0 | dropout 0 | batchnorm False | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.00030 | train loss 1.4587 (running 1.6560) | val loss 1.5231 | train acc 48.58% | val acc 45.86%
+epoch 2 | lr 0.00030 | train loss 1.2961 (running 1.4249) | val loss 1.4285 | train acc 55.04% | val acc 48.98%
+epoch 3 | lr 0.00030 | train loss 1.1847 (running 1.2990) | val loss 1.3849 | train acc 58.56% | val acc 51.28%
+epoch 4 | lr 0.00030 | train loss 1.0801 (running 1.1881) | val loss 1.3591 | train acc 62.18% | val acc 52.26%
+epoch 5 | lr 0.00030 | train loss 0.9856 (running 1.0917) | val loss 1.3373 | train acc 65.60% | val acc 54.04%
+epoch 6 | lr 0.00030 | train loss 0.9007 (running 0.9986) | val loss 1.3542 | train acc 68.78% | val acc 54.28%
+epoch 7 | lr 0.00030 | train loss 0.8031 (running 0.9024) | val loss 1.3886 | train acc 71.88% | val acc 52.86%
+epoch 8 | lr 0.00030 | train loss 0.6973 (running 0.8077) | val loss 1.4328 | train acc 75.42% | val acc 53.54%
+epoch 9 | lr 0.00030 | train loss 0.5955 (running 0.7227) | val loss 1.4372 | train acc 80.36% | val acc 54.20%
+epoch 10 | lr 0.00030 | train loss 0.5247 (running 0.6257) | val loss 1.5263 | train acc 82.38% | val acc 53.72%
+epoch 11 | lr 0.00030 | train loss 0.4588 (running 0.5446) | val loss 1.6367 | train acc 84.36% | val acc 53.98%
+epoch 12 | lr 0.00030 | train loss 0.3941 (running 0.4697) | val loss 1.7433 | train acc 87.28% | val acc 53.90%
+epoch 13 | lr 0.00030 | train loss 0.3231 (running 0.3907) | val loss 1.8450 | train acc 88.80% | val acc 54.36%
+epoch 14 | lr 0.00030 | train loss 0.2659 (running 0.3360) | val loss 1.9375 | train acc 91.48% | val acc 53.84%
+epoch 15 | lr 0.00030 | train loss 0.2375 (running 0.2845) | val loss 2.0852 | train acc 92.16% | val acc 53.56%
+epoch 16 | lr 0.00030 | train loss 0.2154 (running 0.2561) | val loss 2.1928 | train acc 92.98% | val acc 53.60%
+epoch 17 | lr 0.00030 | train loss 0.1799 (running 0.2203) | val loss 2.2998 | train acc 93.86% | val acc 53.92%
+epoch 18 | lr 0.00030 | train loss 0.1693 (running 0.1959) | val loss 2.4203 | train acc 94.52% | val acc 53.34%
+epoch 19 | lr 0.00030 | train loss 0.1487 (running 0.1739) | val loss 2.5473 | train acc 95.12% | val acc 53.62%
+Duration: 11.96 mins
+restored best epoch 13 (val acc 54.36%)
+
+best val acc:             54.36 ± 0.00%  (epochs [13])
+final val - train loss:   2.3986 ± 0.0000  (both eval mode)
+[[324  26  17  16  26   7   7   7  51  31]
+ [ 29 320   5  10   8   5   9  11  38  73]
+ [ 39  10 192  48  69  24  46  37  10   5]
+ [ 15  10  34 190  42 100  46  36  12  16]
+ [ 16   5  69  37 255  20  29  43   8   4]
+ [ 12   4  44 101  44 220  24  52  10  10]
+ [ 13   6  33  58  41  36 279  13   3   8]
+ [ 30   7  33  32  40  23  11 328   3  18]
+ [ 59  37   6   7   7   4   6   8 354  26]
+ [ 31  90   8  11   6   7  11  18  25 256]]
+
+__________________________________________________________________________________________________________________________________
+
+EXP8
+
+ADAM lr 0.01 | NONE | wd 0.0 | dropout 0 | batchnorm False | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.01000 | train loss 1.7745 (running 2.1392) | val loss 1.8035 | train acc 35.38% | val acc 34.50%
+epoch 2 | lr 0.01000 | train loss 1.7051 (running 1.7449) | val loss 1.7397 | train acc 39.74% | val acc 38.56%
+epoch 3 | lr 0.01000 | train loss 1.6592 (running 1.6923) | val loss 1.7122 | train acc 41.00% | val acc 38.90%
+epoch 4 | lr 0.01000 | train loss 1.6670 (running 1.7101) | val loss 1.7477 | train acc 39.46% | val acc 37.44%
+epoch 5 | lr 0.01000 | train loss 1.7376 (running 1.8121) | val loss 1.7899 | train acc 36.06% | val acc 35.42%
+epoch 6 | lr 0.01000 | train loss 1.8798 (running 1.8363) | val loss 1.9153 | train acc 27.72% | val acc 26.38%
+epoch 7 | lr 0.01000 | train loss 1.7324 (running 1.7804) | val loss 1.7877 | train acc 36.78% | val acc 36.28%
+epoch 8 | lr 0.01000 | train loss 1.7599 (running 1.8021) | val loss 1.8332 | train acc 32.46% | val acc 31.40%
+epoch 9 | lr 0.01000 | train loss 1.6930 (running 1.7726) | val loss 1.7851 | train acc 36.06% | val acc 33.68%
+epoch 10 | lr 0.01000 | train loss 2.1514 (running 1.8311) | val loss 2.1641 | train acc 16.02% | val acc 15.48%
+epoch 11 | lr 0.01000 | train loss 2.1037 (running 1.9696) | val loss 2.1382 | train acc 18.98% | val acc 18.90%
+epoch 12 | lr 0.01000 | train loss 2.0640 (running 2.0521) | val loss 2.0834 | train acc 21.50% | val acc 22.32%
+epoch 13 | lr 0.01000 | train loss 2.1830 (running 2.1841) | val loss 2.1829 | train acc 15.12% | val acc 15.86%
+epoch 14 | lr 0.01000 | train loss 2.2044 (running 2.2101) | val loss 2.2104 | train acc 14.32% | val acc 14.92%
+epoch 15 | lr 0.01000 | train loss 2.1874 (running 2.2299) | val loss 2.1832 | train acc 16.20% | val acc 17.22%
+epoch 16 | lr 0.01000 | train loss 2.1545 (running 2.1762) | val loss 2.1615 | train acc 16.90% | val acc 17.74%
+epoch 17 | lr 0.01000 | train loss 2.1828 (running 2.2263) | val loss 2.1849 | train acc 15.98% | val acc 16.54%
+epoch 18 | lr 0.01000 | train loss 2.2032 (running 2.1983) | val loss 2.2045 | train acc 15.40% | val acc 15.96%
+epoch 19 | lr 0.01000 | train loss 2.1943 (running 2.1977) | val loss 2.2001 | train acc 15.16% | val acc 14.68%
+Duration: 11.55 mins
+restored best epoch 3 (val acc 38.90%)
+
+best val acc:             38.90 ± 0.00%  (epochs [3])
+final val - train loss:   0.0058 ± 0.0000  (both eval mode)
+[[269  46  16  11  55  11   6  10  47  41]
+ [ 23 301   5  13  20  11  13   4  62  56]
+ [ 67  15  15  28 142  50 102  48   9   4]
+ [ 12  17  22  86  50 168  73  47   8  18]
+ [ 43   8  13  20 158  34 141  49   4  16]
+ [ 10  18  18  81  58 199  73  47   6  11]
+ [  6  13  18  53  51  44 278  15   4   8]
+ [ 22   9  12  30  67  58  24 230   2  71]
+ [ 94  53  10   5  38  12   6   8 237  51]
+ [ 30 153   2  26  11   7  11  26  25 172]]
+
+ __________________________________________________________________________________________________________________________________
+
+EXP9
+
+MOM lr 0.01 | NONE | wd 0.0005 | dropout 0 | batchnorm False | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.01000 | train loss 1.5445 (running 1.7877) | val loss 1.5759 | train acc 44.52% | val acc 43.52%
+epoch 2 | lr 0.01000 | train loss 1.3422 (running 1.4776) | val loss 1.4472 | train acc 53.42% | val acc 49.00%
+epoch 3 | lr 0.01000 | train loss 1.2369 (running 1.3476) | val loss 1.4004 | train acc 56.58% | val acc 50.36%
+epoch 4 | lr 0.01000 | train loss 1.1756 (running 1.2498) | val loss 1.4076 | train acc 58.22% | val acc 51.26%
+epoch 5 | lr 0.01000 | train loss 1.0589 (running 1.1683) | val loss 1.3621 | train acc 62.60% | val acc 52.04%
+epoch 6 | lr 0.01000 | train loss 0.9899 (running 1.0930) | val loss 1.3436 | train acc 64.54% | val acc 53.68%
+epoch 7 | lr 0.01000 | train loss 0.9099 (running 1.0194) | val loss 1.3620 | train acc 68.56% | val acc 53.32%
+epoch 8 | lr 0.01000 | train loss 0.8892 (running 0.9473) | val loss 1.4888 | train acc 67.84% | val acc 52.04%
+epoch 9 | lr 0.01000 | train loss 0.8001 (running 0.8811) | val loss 1.4013 | train acc 72.60% | val acc 53.26%
+epoch 10 | lr 0.01000 | train loss 0.7008 (running 0.8098) | val loss 1.4602 | train acc 75.68% | val acc 54.62%
+epoch 11 | lr 0.01000 | train loss 0.6873 (running 0.7507) | val loss 1.5341 | train acc 75.58% | val acc 52.14%
+epoch 12 | lr 0.01000 | train loss 0.5601 (running 0.7000) | val loss 1.4948 | train acc 81.06% | val acc 53.90%
+epoch 13 | lr 0.01000 | train loss 0.6359 (running 0.6322) | val loss 1.6857 | train acc 77.38% | val acc 52.56%
+epoch 14 | lr 0.01000 | train loss 0.5138 (running 0.5787) | val loss 1.6815 | train acc 82.16% | val acc 52.90%
+epoch 15 | lr 0.01000 | train loss 0.4607 (running 0.5228) | val loss 1.7321 | train acc 84.30% | val acc 53.74%
+epoch 16 | lr 0.01000 | train loss 0.3893 (running 0.4818) | val loss 1.7793 | train acc 86.48% | val acc 53.48%
+epoch 17 | lr 0.01000 | train loss 0.3947 (running 0.4442) | val loss 1.8899 | train acc 85.54% | val acc 52.68%
+epoch 18 | lr 0.01000 | train loss 0.3193 (running 0.4011) | val loss 1.8933 | train acc 89.30% | val acc 53.78%
+epoch 19 | lr 0.01000 | train loss 0.3315 (running 0.3634) | val loss 2.0335 | train acc 88.20% | val acc 54.76%
+Duration: 7.38 mins
+restored best epoch 19 (val acc 54.76%)
+
+best val acc:             54.76 ± 0.00%  (epochs [19])
+final val - train loss:   1.7019 ± 0.0000  (both eval mode)
+[[313  19  16  21  16  13   6   6  72  30]
+ [ 22 339   7  17   7   4   7   1  52  52]
+ [ 34   7 156  67  56  51  62  22  15  10]
+ [ 15  12  21 230  15 110  51  17  17  13]
+ [ 19   5  50  49 217  33  46  36  22   9]
+ [ 11   7  22 105  30 266  36  24  11   9]
+ [ 15  15  22  60  19  36 303   5  10   5]
+ [ 24  12  12  45  44  48  12 300  14  14]
+ [ 46  30   5  18   5   8   2   5 373  22]
+ [ 21  94  10  14   2  10  11  10  50 241]]
+
+ __________________________________________________________________________________________________________________________________
+
+EXP10
+
+MOM lr 0.01 | NONE | wd 0.0 | dropout 0.5 | batchnorm False | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.01000 | train loss 1.6751 (running 1.9505) | val loss 1.6872 | train acc 39.30% | val acc 39.86%
+epoch 2 | lr 0.01000 | train loss 1.5702 (running 1.7341) | val loss 1.5915 | train acc 44.36% | val acc 43.88%
+epoch 3 | lr 0.01000 | train loss 1.5038 (running 1.6600) | val loss 1.5409 | train acc 47.10% | val acc 45.72%
+epoch 4 | lr 0.01000 | train loss 1.4549 (running 1.6066) | val loss 1.5059 | train acc 49.24% | val acc 46.70%
+epoch 5 | lr 0.01000 | train loss 1.4260 (running 1.5664) | val loss 1.4827 | train acc 50.70% | val acc 48.26%
+epoch 6 | lr 0.01000 | train loss 1.3676 (running 1.5324) | val loss 1.4502 | train acc 52.60% | val acc 48.48%
+epoch 7 | lr 0.01000 | train loss 1.3554 (running 1.5047) | val loss 1.4420 | train acc 52.66% | val acc 48.94%
+epoch 8 | lr 0.01000 | train loss 1.3186 (running 1.4768) | val loss 1.4177 | train acc 54.10% | val acc 49.86%
+epoch 9 | lr 0.01000 | train loss 1.2951 (running 1.4534) | val loss 1.4122 | train acc 55.62% | val acc 50.22%
+epoch 10 | lr 0.01000 | train loss 1.2707 (running 1.4370) | val loss 1.3849 | train acc 55.20% | val acc 50.28%
+epoch 11 | lr 0.01000 | train loss 1.2427 (running 1.4202) | val loss 1.3884 | train acc 56.84% | val acc 50.32%
+epoch 12 | lr 0.01000 | train loss 1.2301 (running 1.3955) | val loss 1.3743 | train acc 57.36% | val acc 50.88%
+epoch 13 | lr 0.01000 | train loss 1.2033 (running 1.3801) | val loss 1.3554 | train acc 58.28% | val acc 51.88%
+epoch 14 | lr 0.01000 | train loss 1.1801 (running 1.3646) | val loss 1.3412 | train acc 58.04% | val acc 51.30%
+epoch 15 | lr 0.01000 | train loss 1.1733 (running 1.3485) | val loss 1.3665 | train acc 58.74% | val acc 51.66%
+epoch 16 | lr 0.01000 | train loss 1.1368 (running 1.3315) | val loss 1.3437 | train acc 60.90% | val acc 52.20%
+epoch 17 | lr 0.01000 | train loss 1.1221 (running 1.3213) | val loss 1.3412 | train acc 61.34% | val acc 52.46%
+epoch 18 | lr 0.01000 | train loss 1.0965 (running 1.3115) | val loss 1.3347 | train acc 61.14% | val acc 52.56%
+epoch 19 | lr 0.01000 | train loss 1.0949 (running 1.2914) | val loss 1.3217 | train acc 61.78% | val acc 53.14%
+Duration: 9.02 mins
+restored best epoch 19 (val acc 53.14%)
+
+best val acc:             53.14 ± 0.00%  (epochs [19])
+final val - train loss:   0.2268 ± 0.0000  (both eval mode)
+[[287  23  25  19  30  10  19   7  58  34]
+ [ 23 320   8  20  11   3  12   3  32  76]
+ [ 40   6 155  33 113  34  73  17   6   3]
+ [  6   6  40 144  37 140  83  16  13  16]
+ [ 21   2  51  23 289  25  36  24   8   7]
+ [  6   5  41  85  55 221  67  20  17   4]
+ [  1   5  25  34  55  26 325   5   3  11]
+ [ 17   7  25  29  60  48  24 292   7  16]
+ [ 58  21   7  12  18  12   4   1 350  31]
+ [ 26  82   8  16   3   9  13  10  22 274]]
+
+ __________________________________________________________________________________________________________________________________
+
+EXP11
+
+MOM lr 0.01 | NONE | wd 0.0 | dropout 0.2 | batchnorm False | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.01000 | train loss 1.5825 (running 1.8381) | val loss 1.5975 | train acc 43.60% | val acc 43.66%
+epoch 2 | lr 0.01000 | train loss 1.4189 (running 1.5650) | val loss 1.4813 | train acc 49.46% | val acc 47.54%
+epoch 3 | lr 0.01000 | train loss 1.3569 (running 1.4556) | val loss 1.4479 | train acc 52.58% | val acc 48.72%
+epoch 4 | lr 0.01000 | train loss 1.2488 (running 1.3783) | val loss 1.3916 | train acc 55.46% | val acc 50.66%
+epoch 5 | lr 0.01000 | train loss 1.2219 (running 1.3172) | val loss 1.4059 | train acc 57.64% | val acc 50.62%
+epoch 6 | lr 0.01000 | train loss 1.1454 (running 1.2661) | val loss 1.3653 | train acc 58.76% | val acc 50.98%
+epoch 7 | lr 0.01000 | train loss 1.0695 (running 1.2143) | val loss 1.3482 | train acc 62.98% | val acc 53.20%
+epoch 8 | lr 0.01000 | train loss 1.0305 (running 1.1745) | val loss 1.3151 | train acc 64.34% | val acc 54.00%
+epoch 9 | lr 0.01000 | train loss 0.9728 (running 1.1300) | val loss 1.3156 | train acc 66.54% | val acc 54.26%
+epoch 10 | lr 0.01000 | train loss 0.9399 (running 1.0846) | val loss 1.2981 | train acc 66.44% | val acc 54.50%
+epoch 11 | lr 0.01000 | train loss 0.8885 (running 1.0484) | val loss 1.3138 | train acc 69.50% | val acc 55.14%
+epoch 12 | lr 0.01000 | train loss 0.8504 (running 1.0102) | val loss 1.3082 | train acc 70.46% | val acc 54.86%
+epoch 13 | lr 0.01000 | train loss 0.8083 (running 0.9730) | val loss 1.3231 | train acc 71.38% | val acc 55.02%
+epoch 14 | lr 0.01000 | train loss 0.7511 (running 0.9369) | val loss 1.3123 | train acc 73.60% | val acc 55.18%
+epoch 15 | lr 0.01000 | train loss 0.7196 (running 0.9071) | val loss 1.3225 | train acc 75.50% | val acc 55.60%
+epoch 16 | lr 0.01000 | train loss 0.6774 (running 0.8798) | val loss 1.3619 | train acc 77.26% | val acc 55.66%
+epoch 17 | lr 0.01000 | train loss 0.6357 (running 0.8472) | val loss 1.3441 | train acc 77.92% | val acc 56.44%
+epoch 18 | lr 0.01000 | train loss 0.6199 (running 0.8199) | val loss 1.4016 | train acc 78.14% | val acc 55.46%
+epoch 19 | lr 0.01000 | train loss 0.5828 (running 0.7915) | val loss 1.3758 | train acc 80.36% | val acc 55.60%
+Duration: 8.38 mins
+restored best epoch 17 (val acc 56.44%)
+
+best val acc:             56.44 ± 0.00%  (epochs [17])
+final val - train loss:   0.7930 ± 0.0000  (both eval mode)
+[[285  15  31   7  30  12  10   9  80  33]
+ [ 23 332   7  12   8   3   3   4  40  76]
+ [ 40   7 217  40  74  32  30  21  10   9]
+ [  8   8  49 178  42 114  45  26  15  16]
+ [ 15   6  66  21 293  24  18  24  13   6]
+ [  9   3  47  97  45 243  26  29  11  11]
+ [  6   6  57  42  47  36 274  11   1  10]
+ [ 23   7  37  34  45  38   9 304   9  19]
+ [ 31  19   8   9   6   9   3   3 401  25]
+ [ 11  63   8  15   2   9   9  11  40 295]]
+
+ __________________________________________________________________________________________________________________________________
+
+EXP12
+
+MOM lr 0.01 | NONE | wd 0.0 | dropout 0 | batchnorm True | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.01000 | train loss 1.3482 (running 1.5844) | val loss 1.4512 | train acc 52.48% | val acc 48.68%
+epoch 2 | lr 0.01000 | train loss 1.2210 (running 1.3472) | val loss 1.3636 | train acc 56.32% | val acc 50.82%
+epoch 3 | lr 0.01000 | train loss 1.0923 (running 1.2212) | val loss 1.3354 | train acc 61.66% | val acc 52.78%
+epoch 4 | lr 0.01000 | train loss 0.9912 (running 1.1243) | val loss 1.3117 | train acc 65.26% | val acc 53.86%
+epoch 5 | lr 0.01000 | train loss 0.9123 (running 1.0309) | val loss 1.3106 | train acc 68.44% | val acc 54.86%
+epoch 6 | lr 0.01000 | train loss 0.8166 (running 0.9472) | val loss 1.3224 | train acc 71.58% | val acc 54.80%
+epoch 7 | lr 0.01000 | train loss 0.7699 (running 0.8774) | val loss 1.3687 | train acc 73.06% | val acc 54.92%
+epoch 8 | lr 0.01000 | train loss 0.6613 (running 0.7971) | val loss 1.3677 | train acc 76.94% | val acc 55.24%
+epoch 9 | lr 0.01000 | train loss 0.6199 (running 0.7262) | val loss 1.4414 | train acc 78.28% | val acc 53.68%
+epoch 10 | lr 0.01000 | train loss 0.5962 (running 0.6562) | val loss 1.5096 | train acc 79.20% | val acc 54.32%
+epoch 11 | lr 0.01000 | train loss 0.4758 (running 0.5946) | val loss 1.5393 | train acc 83.88% | val acc 54.68%
+epoch 12 | lr 0.01000 | train loss 0.4052 (running 0.5261) | val loss 1.6060 | train acc 86.86% | val acc 53.86%
+epoch 13 | lr 0.01000 | train loss 0.3672 (running 0.4797) | val loss 1.6360 | train acc 87.98% | val acc 54.62%
+epoch 14 | lr 0.01000 | train loss 0.3542 (running 0.4135) | val loss 1.7823 | train acc 87.60% | val acc 54.14%
+epoch 15 | lr 0.01000 | train loss 0.2709 (running 0.3809) | val loss 1.7202 | train acc 91.36% | val acc 54.70%
+epoch 16 | lr 0.01000 | train loss 0.2457 (running 0.3275) | val loss 1.8692 | train acc 91.70% | val acc 53.94%
+epoch 17 | lr 0.01000 | train loss 0.2384 (running 0.3038) | val loss 1.8928 | train acc 91.88% | val acc 53.90%
+epoch 18 | lr 0.01000 | train loss 0.1694 (running 0.2565) | val loss 1.8973 | train acc 94.64% | val acc 55.94%
+epoch 19 | lr 0.01000 | train loss 0.1793 (running 0.2406) | val loss 2.0546 | train acc 94.34% | val acc 55.20%
+Duration: 8.18 mins
+restored best epoch 18 (val acc 55.94%)
+
+best val acc:             55.94 ± 0.00%  (epochs [18])
+final val - train loss:   1.8753 ± 0.0000  (both eval mode)
+[[289  25  29  18  28   8   9   9  67  30]
+ [ 17 354   6  14   3   4   5   6  36  63]
+ [ 26  11 213  41  71  31  45  26   9   7]
+ [ 11   8  40 207  36  84  61  29   8  17]
+ [ 19   6  61  25 256  27  28  43  10  11]
+ [ 10  11  37 105  52 222  31  36   8   9]
+ [ 10   7  41  61  35  28 290  11   0   7]
+ [ 16  10  27  39  40  27  14 328   8  16]
+ [ 26  26   7  16  17   6   6   8 370  32]
+ [ 16  87  11  16   2   7   8  20  28 268]]
+
+ __________________________________________________________________________________________________________________________________
+
+EXP13
+
+MOM lr 0.03 | NONE | wd 0.0 | dropout 0 | batchnorm True | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.03000 | train loss 1.3932 (running 1.6063) | val loss 1.4889 | train acc 50.00% | val acc 46.48%
+epoch 2 | lr 0.03000 | train loss 1.2673 (running 1.3759) | val loss 1.3847 | train acc 54.46% | val acc 50.56%
+epoch 3 | lr 0.03000 | train loss 1.1371 (running 1.2525) | val loss 1.3598 | train acc 59.78% | val acc 52.40%
+epoch 4 | lr 0.03000 | train loss 1.0322 (running 1.1628) | val loss 1.3151 | train acc 63.44% | val acc 53.54%
+epoch 5 | lr 0.03000 | train loss 0.9462 (running 1.0712) | val loss 1.3051 | train acc 66.94% | val acc 54.04%
+epoch 6 | lr 0.03000 | train loss 0.8788 (running 0.9897) | val loss 1.3323 | train acc 69.12% | val acc 54.94%
+epoch 7 | lr 0.03000 | train loss 0.7999 (running 0.9235) | val loss 1.3507 | train acc 72.06% | val acc 54.58%
+epoch 8 | lr 0.03000 | train loss 0.6946 (running 0.8424) | val loss 1.3514 | train acc 76.22% | val acc 55.08%
+epoch 9 | lr 0.03000 | train loss 0.6684 (running 0.7769) | val loss 1.4226 | train acc 77.60% | val acc 54.46%
+epoch 10 | lr 0.03000 | train loss 0.5698 (running 0.7083) | val loss 1.4492 | train acc 80.36% | val acc 55.14%
+epoch 11 | lr 0.03000 | train loss 0.5181 (running 0.6437) | val loss 1.5181 | train acc 82.02% | val acc 54.44%
+epoch 12 | lr 0.03000 | train loss 0.4713 (running 0.5785) | val loss 1.5946 | train acc 83.48% | val acc 54.52%
+epoch 13 | lr 0.03000 | train loss 0.4265 (running 0.5283) | val loss 1.6238 | train acc 85.16% | val acc 53.56%
+epoch 14 | lr 0.03000 | train loss 0.3840 (running 0.4659) | val loss 1.7498 | train acc 86.64% | val acc 53.56%
+epoch 15 | lr 0.03000 | train loss 0.3041 (running 0.4192) | val loss 1.7424 | train acc 89.64% | val acc 55.30%
+epoch 16 | lr 0.03000 | train loss 0.2913 (running 0.3706) | val loss 1.8815 | train acc 90.02% | val acc 53.76%
+epoch 17 | lr 0.03000 | train loss 0.2349 (running 0.3381) | val loss 1.9175 | train acc 91.88% | val acc 55.40%
+epoch 18 | lr 0.03000 | train loss 0.2185 (running 0.3076) | val loss 1.9537 | train acc 92.34% | val acc 55.18%
+epoch 19 | lr 0.03000 | train loss 0.2015 (running 0.2765) | val loss 2.1058 | train acc 92.94% | val acc 54.86%
+Duration: 9.11 mins
+restored best epoch 17 (val acc 55.40%)
+
+best val acc:             55.40 ± 0.00%  (epochs [17])
+final val - train loss:   1.9043 ± 0.0000  (both eval mode)
+[[268  25  32  21  22  16  10  12  69  37]
+ [ 16 330   8  14   7   5   6   8  38  76]
+ [ 26  12 245  40  48  35  43  21   4   6]
+ [  8   8  40 197  21 120  49  32  10  16]
+ [ 17   6  74  36 222  30  38  43  13   7]
+ [  9   7  51  94  39 234  30  38   5  14]
+ [  6   5  46  56  19  30 295  14   8  11]
+ [ 12   9  34  44  44  31   7 321   4  19]
+ [ 27  24   9  18   8   5   6   9 375  33]
+ [ 13  75   8  11   6  12  10  14  31 283]]
+
+ __________________________________________________________________________________________________________________________________
+
+EXP14
+
+MOM lr 0.01 | NONE | wd 0.0 | dropout 0 | batchnorm False | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.01000 | train loss 1.5408 (running 1.7861) | val loss 1.5751 | train acc 44.80% | val acc 43.78%
+epoch 2 | lr 0.01000 | train loss 1.3375 (running 1.4754) | val loss 1.4461 | train acc 53.90% | val acc 49.00%
+epoch 3 | lr 0.01000 | train loss 1.2249 (running 1.3421) | val loss 1.4050 | train acc 56.98% | val acc 50.08%
+epoch 4 | lr 0.01000 | train loss 1.1501 (running 1.2404) | val loss 1.4004 | train acc 59.08% | val acc 51.52%
+epoch 5 | lr 0.01000 | train loss 1.0459 (running 1.1529) | val loss 1.3665 | train acc 62.56% | val acc 52.30%
+epoch 6 | lr 0.01000 | train loss 0.9626 (running 1.0745) | val loss 1.3521 | train acc 65.84% | val acc 53.80%
+epoch 7 | lr 0.01000 | train loss 0.8942 (running 0.9927) | val loss 1.3824 | train acc 69.50% | val acc 52.58%
+epoch 8 | lr 0.01000 | train loss 0.8508 (running 0.9135) | val loss 1.4984 | train acc 69.02% | val acc 52.46%
+epoch 9 | lr 0.01000 | train loss 0.7302 (running 0.8403) | val loss 1.4177 | train acc 75.70% | val acc 53.38%
+epoch 10 | lr 0.01000 | train loss 0.6520 (running 0.7664) | val loss 1.5057 | train acc 77.98% | val acc 53.80%
+epoch 11 | lr 0.01000 | train loss 0.6140 (running 0.6962) | val loss 1.6088 | train acc 78.64% | val acc 52.84%
+epoch 12 | lr 0.01000 | train loss 0.5294 (running 0.6321) | val loss 1.6039 | train acc 82.24% | val acc 53.78%
+epoch 13 | lr 0.01000 | train loss 0.5167 (running 0.5640) | val loss 1.7262 | train acc 81.84% | val acc 53.14%
+epoch 14 | lr 0.01000 | train loss 0.4708 (running 0.5088) | val loss 1.8586 | train acc 83.18% | val acc 52.58%
+epoch 15 | lr 0.01000 | train loss 0.3805 (running 0.4577) | val loss 1.8986 | train acc 87.24% | val acc 52.90%
+epoch 16 | lr 0.01000 | train loss 0.3210 (running 0.4158) | val loss 1.9734 | train acc 89.38% | val acc 53.82%
+epoch 17 | lr 0.01000 | train loss 0.2720 (running 0.3779) | val loss 2.0200 | train acc 90.58% | val acc 54.26%
+epoch 18 | lr 0.01000 | train loss 0.2862 (running 0.3355) | val loss 2.2009 | train acc 90.20% | val acc 53.56%
+epoch 19 | lr 0.01000 | train loss 0.3050 (running 0.2997) | val loss 2.2873 | train acc 89.64% | val acc 53.66%
+Duration: 7.56 mins
+restored best epoch 17 (val acc 54.26%)
+
+best val acc:             54.26 ± 0.00%  (epochs [17])
+final val - train loss:   1.9824 ± 0.0000  (both eval mode)
+[[303  24  26  15  33  11  10   6  48  36]
+ [ 27 286   9  15   7   5   9   4  38 108]
+ [ 36   8 177  37  84  50  53  23   5   7]
+ [ 14   8  34 192  28 106  56  21  16  26]
+ [ 15   4  53  22 280  31  35  22  14  10]
+ [  8   7  35  94  45 240  36  31   8  17]
+ [  3   7  32  49  29  38 306  11   5  10]
+ [ 22   9  22  39  63  49  15 274   3  29]
+ [ 63  16   8  16  14   6   4   3 352  32]
+ [ 22  54  11  13   2  12   9   6  31 303]]
+
+ __________________________________________________________________________________________________________________________________
+
+EXP15
+
+
+MOM lr 0.01 | COSINE | wd 0.0 | dropout 0 | batchnorm False | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.01000 | train loss 1.5408 (running 1.7861) | val loss 1.5751 | train acc 44.80% | val acc 43.78%
+epoch 2 | lr 0.00993 | train loss 1.3336 (running 1.4743) | val loss 1.4424 | train acc 54.04% | val acc 49.36%
+epoch 3 | lr 0.00973 | train loss 1.2267 (running 1.3401) | val loss 1.4075 | train acc 57.08% | val acc 50.30%
+epoch 4 | lr 0.00940 | train loss 1.1489 (running 1.2358) | val loss 1.3919 | train acc 59.22% | val acc 51.62%
+epoch 5 | lr 0.00895 | train loss 1.0476 (running 1.1414) | val loss 1.3637 | train acc 62.84% | val acc 52.56%
+epoch 6 | lr 0.00839 | train loss 0.9498 (running 1.0529) | val loss 1.3419 | train acc 66.12% | val acc 54.02%
+epoch 7 | lr 0.00773 | train loss 0.8592 (running 0.9559) | val loss 1.3709 | train acc 70.48% | val acc 53.50%
+epoch 8 | lr 0.00701 | train loss 0.8064 (running 0.8607) | val loss 1.4677 | train acc 71.20% | val acc 53.32%
+epoch 9 | lr 0.00623 | train loss 0.6756 (running 0.7685) | val loss 1.4276 | train acc 77.74% | val acc 53.60%
+epoch 10 | lr 0.00541 | train loss 0.5471 (running 0.6609) | val loss 1.4708 | train acc 81.60% | val acc 54.92%
+epoch 11 | lr 0.00459 | train loss 0.5013 (running 0.5554) | val loss 1.5963 | train acc 83.40% | val acc 54.20%
+epoch 12 | lr 0.00377 | train loss 0.3715 (running 0.4535) | val loss 1.5836 | train acc 89.08% | val acc 55.74%
+epoch 13 | lr 0.00299 | train loss 0.2909 (running 0.3548) | val loss 1.6680 | train acc 90.96% | val acc 55.20%
+epoch 14 | lr 0.00227 | train loss 0.2212 (running 0.2708) | val loss 1.7528 | train acc 94.24% | val acc 56.08%
+epoch 15 | lr 0.00161 | train loss 0.1714 (running 0.2055) | val loss 1.8097 | train acc 96.00% | val acc 56.12%
+epoch 16 | lr 0.00105 | train loss 0.1398 (running 0.1609) | val loss 1.8274 | train acc 96.92% | val acc 56.36%
+epoch 17 | lr 0.00060 | train loss 0.1192 (running 0.1339) | val loss 1.8631 | train acc 97.96% | val acc 56.44%
+epoch 18 | lr 0.00027 | train loss 0.1131 (running 0.1186) | val loss 1.8771 | train acc 97.98% | val acc 56.98%
+epoch 19 | lr 0.00007 | train loss 0.1106 (running 0.1114) | val loss 1.8780 | train acc 98.06% | val acc 56.48%
+Duration: 7.29 mins
+restored best epoch 18 (val acc 56.98%)
+
+best val acc:             56.98 ± 0.00%  (epochs [18])
+final val - train loss:   1.7674 ± 0.0000  (both eval mode)
+[[310  18  27  15  21   6  14  11  58  32]
+ [ 22 317  10  14   6   2   9   4  41  83]
+ [ 31   6 229  38  55  40  41  24   6  10]
+ [ 16   7  42 214  28  88  43  32  11  20]
+ [ 19   5  76  26 252  23  32  33  12   8]
+ [ 13   5  42 103  38 236  28  30   8  18]
+ [  8   7  30  50  29  27 313  11   3  12]
+ [ 18   7  37  31  46  35  11 315   2  23]
+ [ 44  21   6  14   8   2   7   5 376  31]
+ [ 20  69  15  13   4  12   7  11  25 287]]
+ __________________________________________________________________________________________________________________________________
+
+EXP16
+
+MOM lr 0.1 | COSINE | wd 0.0 | dropout 0 | batchnorm False | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.10000 | train loss 1.7274 (running 1.8012) | val loss 1.7689 | train acc 38.52% | val acc 36.98%
+epoch 2 | lr 0.09932 | train loss 1.6555 (running 1.6905) | val loss 1.7310 | train acc 41.66% | val acc 39.08%
+epoch 3 | lr 0.09729 | train loss 1.6468 (running 1.6839) | val loss 1.7576 | train acc 42.40% | val acc 39.64%
+epoch 4 | lr 0.09397 | train loss 1.6346 (running 1.6561) | val loss 1.7141 | train acc 43.70% | val acc 41.84%
+epoch 5 | lr 0.08946 | train loss 1.6230 (running 1.6238) | val loss 1.7692 | train acc 43.44% | val acc 40.20%
+epoch 6 | lr 0.08386 | train loss 1.5363 (running 1.5810) | val loss 1.6806 | train acc 48.26% | val acc 43.62%
+epoch 7 | lr 0.07735 | train loss 1.5513 (running 1.5259) | val loss 1.7494 | train acc 46.86% | val acc 41.28%
+epoch 8 | lr 0.07008 | train loss 1.4218 (running 1.4611) | val loss 1.7342 | train acc 50.70% | val acc 43.52%
+epoch 9 | lr 0.06227 | train loss 1.3165 (running 1.3973) | val loss 1.6065 | train acc 53.62% | val acc 45.44%
+epoch 10 | lr 0.05413 | train loss 1.1706 (running 1.2939) | val loss 1.5785 | train acc 58.34% | val acc 47.96%
+epoch 11 | lr 0.04587 | train loss 1.1137 (running 1.1896) | val loss 1.5918 | train acc 60.10% | val acc 48.88%
+epoch 12 | lr 0.03773 | train loss 1.0061 (running 1.0951) | val loss 1.5441 | train acc 63.90% | val acc 50.50%
+epoch 13 | lr 0.02992 | train loss 0.9041 (running 0.9811) | val loss 1.5548 | train acc 67.28% | val acc 51.26%
+epoch 14 | lr 0.02265 | train loss 0.7960 (running 0.8809) | val loss 1.6124 | train acc 70.72% | val acc 52.10%
+epoch 15 | lr 0.01614 | train loss 0.7233 (running 0.7796) | val loss 1.7147 | train acc 73.62% | val acc 52.62%
+epoch 16 | lr 0.01054 | train loss 0.6378 (running 0.6881) | val loss 1.7641 | train acc 76.28% | val acc 53.04%
+epoch 17 | lr 0.00603 | train loss 0.5715 (running 0.6117) | val loss 1.8436 | train acc 78.84% | val acc 53.48%
+epoch 18 | lr 0.00271 | train loss 0.5357 (running 0.5579) | val loss 1.9148 | train acc 80.48% | val acc 53.42%
+epoch 19 | lr 0.00068 | train loss 0.5251 (running 0.5276) | val loss 1.9298 | train acc 80.84% | val acc 53.38%
+Duration: 7.80 mins
+restored best epoch 17 (val acc 53.48%)
+
+best val acc:             53.48 ± 0.00%  (epochs [17])
+final val - train loss:   1.4047 ± 0.0000  (both eval mode)
+[[286  26  42  19  27   7   9  10  58  28]
+ [ 20 317  13  24   6   3   3   3  46  73]
+ [ 32   8 200  43  82  36  43  22   7   7]
+ [  9   8  54 196  33  97  48  31  11  14]
+ [ 22   3  68  31 255  27  31  25  17   7]
+ [  7   3  61 130  45 195  28  28  12  12]
+ [  5   4  42  60  43  21 290  10   6   9]
+ [ 18   7  32  37  45  44  13 304   3  22]
+ [ 48  31  12  15  11   2   5   2 364  24]
+ [ 21  74   6  20   6   5   9  18  37 267]]
+
+ __________________________________________________________________________________________________________________________________
+
+EXP17
+
+MOM lr 0.01 | STEP | wd 0.0 | dropout 0 | batchnorm False | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.01000 | train loss 1.5408 (running 1.7861) | val loss 1.5751 | train acc 44.80% | val acc 43.78%
+epoch 2 | lr 0.01000 | train loss 1.3375 (running 1.4754) | val loss 1.4461 | train acc 53.90% | val acc 49.00%
+epoch 3 | lr 0.01000 | train loss 1.2249 (running 1.3421) | val loss 1.4050 | train acc 56.98% | val acc 50.08%
+epoch 4 | lr 0.01000 | train loss 1.1501 (running 1.2404) | val loss 1.4004 | train acc 59.08% | val acc 51.52%
+epoch 5 | lr 0.01000 | train loss 1.0459 (running 1.1529) | val loss 1.3665 | train acc 62.56% | val acc 52.30%
+epoch 6 | lr 0.01000 | train loss 0.9626 (running 1.0745) | val loss 1.3521 | train acc 65.84% | val acc 53.80%
+epoch 7 | lr 0.00100 | train loss 0.7703 (running 0.8267) | val loss 1.2936 | train acc 74.16% | val acc 56.38%
+epoch 8 | lr 0.00100 | train loss 0.7217 (running 0.7582) | val loss 1.3044 | train acc 76.04% | val acc 56.68%
+epoch 9 | lr 0.00100 | train loss 0.6936 (running 0.7217) | val loss 1.3147 | train acc 77.26% | val acc 56.40%
+epoch 10 | lr 0.00100 | train loss 0.6579 (running 0.6882) | val loss 1.3201 | train acc 78.26% | val acc 56.54%
+epoch 11 | lr 0.00100 | train loss 0.6243 (running 0.6574) | val loss 1.3417 | train acc 79.82% | val acc 56.70%
+epoch 12 | lr 0.00100 | train loss 0.5909 (running 0.6276) | val loss 1.3494 | train acc 81.12% | val acc 56.82%
+epoch 13 | lr 0.00010 | train loss 0.5743 (running 0.5728) | val loss 1.3450 | train acc 82.10% | val acc 57.02%
+epoch 14 | lr 0.00010 | train loss 0.5690 (running 0.5651) | val loss 1.3471 | train acc 82.40% | val acc 57.14%
+epoch 15 | lr 0.00010 | train loss 0.5649 (running 0.5605) | val loss 1.3524 | train acc 82.50% | val acc 57.18%
+epoch 16 | lr 0.00010 | train loss 0.5606 (running 0.5562) | val loss 1.3543 | train acc 82.64% | val acc 57.24%
+epoch 17 | lr 0.00010 | train loss 0.5566 (running 0.5525) | val loss 1.3590 | train acc 82.64% | val acc 56.98%
+epoch 18 | lr 0.00010 | train loss 0.5527 (running 0.5486) | val loss 1.3594 | train acc 82.84% | val acc 57.28%
+epoch 19 | lr 0.00001 | train loss 0.5518 (running 0.5421) | val loss 1.3598 | train acc 82.96% | val acc 57.06%
+Duration: 8.18 mins
+restored best epoch 18 (val acc 57.28%)
+
+best val acc:             57.28 ± 0.00%  (epochs [18])
+final val - train loss:   0.8080 ± 0.0000  (both eval mode)
+[[319  19  23  15  23   4  10  13  56  30]
+ [ 23 329   9  10   5   2  12   1  34  83]
+ [ 34   6 231  27  63  37  44  25   3  10]
+ [ 11   6  46 199  30  96  51  32  10  20]
+ [ 19   4  64  24 263  21  34  32  15  10]
+ [ 13   6  42  99  55 224  32  32   5  13]
+ [  8   4  37  43  30  24 316  14   3  11]
+ [ 15   7  31  41  37  31  10 322   4  27]
+ [ 40  21  12  12   6   6   5   6 375  31]
+ [ 18  73  15  13   1  10   8  15  24 286]]
+ __________________________________________________________________________________________________________________________________
+
+EXP18
+
+MOM lr 0.1 | EXPONENTIAL | wd 0.0 | dropout 0 | batchnorm False | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.10000 | train loss 1.7274 (running 1.8012) | val loss 1.7689 | train acc 38.52% | val acc 36.98%
+epoch 2 | lr 0.08500 | train loss 1.5780 (running 1.6454) | val loss 1.6549 | train acc 45.70% | val acc 41.78%
+epoch 3 | lr 0.07225 | train loss 1.4922 (running 1.5494) | val loss 1.6235 | train acc 47.74% | val acc 43.10%
+epoch 4 | lr 0.06141 | train loss 1.3855 (running 1.4511) | val loss 1.5393 | train acc 50.64% | val acc 45.86%
+epoch 5 | lr 0.05220 | train loss 1.2768 (running 1.3484) | val loss 1.5200 | train acc 53.94% | val acc 47.54%
+epoch 6 | lr 0.04437 | train loss 1.1943 (running 1.2464) | val loss 1.4869 | train acc 58.16% | val acc 49.74%
+epoch 7 | lr 0.03771 | train loss 1.0808 (running 1.1433) | val loss 1.4856 | train acc 61.38% | val acc 50.02%
+epoch 8 | lr 0.03206 | train loss 0.9551 (running 1.0387) | val loss 1.5401 | train acc 64.56% | val acc 51.56%
+epoch 9 | lr 0.02725 | train loss 0.8502 (running 0.9438) | val loss 1.4887 | train acc 69.32% | val acc 51.82%
+epoch 10 | lr 0.02316 | train loss 0.7359 (running 0.8361) | val loss 1.5647 | train acc 72.68% | val acc 53.74%
+epoch 11 | lr 0.01969 | train loss 0.6725 (running 0.7383) | val loss 1.6451 | train acc 75.04% | val acc 53.36%
+epoch 12 | lr 0.01673 | train loss 0.5604 (running 0.6495) | val loss 1.6990 | train acc 80.14% | val acc 53.00%
+epoch 13 | lr 0.01422 | train loss 0.4766 (running 0.5570) | val loss 1.7858 | train acc 82.70% | val acc 53.86%
+epoch 14 | lr 0.01209 | train loss 0.3918 (running 0.4732) | val loss 1.9098 | train acc 86.20% | val acc 55.08%
+epoch 15 | lr 0.01028 | train loss 0.3287 (running 0.3941) | val loss 2.0620 | train acc 88.54% | val acc 53.52%
+epoch 16 | lr 0.00874 | train loss 0.2682 (running 0.3257) | val loss 2.1678 | train acc 90.86% | val acc 53.58%
+epoch 17 | lr 0.00743 | train loss 0.2218 (running 0.2668) | val loss 2.3351 | train acc 92.54% | val acc 54.26%
+epoch 18 | lr 0.00631 | train loss 0.1724 (running 0.2177) | val loss 2.4711 | train acc 94.80% | val acc 54.44%
+epoch 19 | lr 0.00536 | train loss 0.1351 (running 0.1746) | val loss 2.5752 | train acc 96.20% | val acc 54.06%
+Duration: 9.49 mins
+restored best epoch 14 (val acc 55.08%)
+
+best val acc:             55.08 ± 0.00%  (epochs [14])
+final val - train loss:   2.4401 ± 0.0000  (both eval mode)
+[[316  22  24  14  25  17   8  10  48  28]
+ [ 29 318   7  12   7   6  12   6  40  71]
+ [ 37  14 198  37  67  46  40  26   8   7]
+ [ 10   5  33 181  33 111  61  30  12  25]
+ [ 26   2  58  23 273  33  25  31   7   8]
+ [  9   6  53  91  39 225  39  36   6  17]
+ [  5   5  42  50  49  28 293  10   3   5]
+ [ 19   3  32  29  35  48  14 323   4  18]
+ [ 65  21  10  12  13   6   7   5 348  27]
+ [ 26  71   5  17   4  11  13  12  25 279]]
+
+__________________________________________________________________________________________________________________________________
+
+EXP19
+
+MOM lr 0.01 | EXPONENTIAL | wd 0.0 | dropout 0 | batchnorm False | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.01000 | Exponential Factor 0.85 | train loss 1.5408 (running 1.7861) | val loss 1.5751 | train acc 44.80% | val acc 43.78%
+epoch 2 | lr 0.00850 | Exponential Factor 0.85 | train loss 1.3339 (running 1.4674) | val loss 1.4376 | train acc 53.86% | val acc 49.20%
+epoch 3 | lr 0.00722 | Exponential Factor 0.85 | train loss 1.2238 (running 1.3280) | val loss 1.3979 | train acc 57.12% | val acc 50.76%
+epoch 4 | lr 0.00614 | Exponential Factor 0.85 | train loss 1.1267 (running 1.2151) | val loss 1.3668 | train acc 59.70% | val acc 51.68%
+epoch 5 | lr 0.00522 | Exponential Factor 0.85 | train loss 1.0272 (running 1.1189) | val loss 1.3399 | train acc 63.96% | val acc 53.26%
+epoch 6 | lr 0.00444 | Exponential Factor 0.85 | train loss 0.9564 (running 1.0279) | val loss 1.3419 | train acc 65.82% | val acc 53.66%
+epoch 7 | lr 0.00377 | Exponential Factor 0.85 | train loss 0.8662 (running 0.9365) | val loss 1.3715 | train acc 69.92% | val acc 53.16%
+epoch 8 | lr 0.00321 | Exponential Factor 0.85 | train loss 0.7842 (running 0.8497) | val loss 1.3890 | train acc 72.44% | val acc 54.12%
+epoch 9 | lr 0.00272 | Exponential Factor 0.85 | train loss 0.6841 (running 0.7666) | val loss 1.3733 | train acc 76.78% | val acc 55.04%
+epoch 10 | lr 0.00232 | Exponential Factor 0.85 | train loss 0.6086 (running 0.6837) | val loss 1.4157 | train acc 80.04% | val acc 55.06%
+epoch 11 | lr 0.00197 | Exponential Factor 0.85 | train loss 0.5341 (running 0.6063) | val loss 1.4508 | train acc 82.16% | val acc 55.62%
+epoch 12 | lr 0.00167 | Exponential Factor 0.85 | train loss 0.4990 (running 0.5447) | val loss 1.4866 | train acc 83.98% | val acc 55.28%
+epoch 13 | lr 0.00142 | Exponential Factor 0.85 | train loss 0.4166 (running 0.4747) | val loss 1.5199 | train acc 87.54% | val acc 55.50%
+epoch 14 | lr 0.00121 | Exponential Factor 0.85 | train loss 0.3694 (running 0.4192) | val loss 1.5440 | train acc 89.60% | val acc 55.52%
+epoch 15 | lr 0.00103 | Exponential Factor 0.85 | train loss 0.3284 (running 0.3674) | val loss 1.5844 | train acc 90.92% | val acc 55.78%
+epoch 16 | lr 0.00087 | Exponential Factor 0.85 | train loss 0.2891 (running 0.3272) | val loss 1.5811 | train acc 92.18% | val acc 56.42%
+epoch 17 | lr 0.00074 | Exponential Factor 0.85 | train loss 0.2623 (running 0.2933) | val loss 1.6418 | train acc 93.30% | val acc 56.14%
+epoch 18 | lr 0.00063 | Exponential Factor 0.85 | train loss 0.2378 (running 0.2637) | val loss 1.6667 | train acc 94.28% | val acc 56.54%
+epoch 19 | lr 0.00054 | Exponential Factor 0.85 | train loss 0.2183 (running 0.2400) | val loss 1.6764 | train acc 95.16% | val acc 56.60%
+Duration: 9.20 mins
+restored best epoch 19 (val acc 56.60%)
+
+best val acc:             56.60 ± 0.00%  (epochs [19])
+final val - train loss:   1.4581 ± 0.0000  (both eval mode)
+[[312  15  30  16  19   5   9  18  58  30]
+ [ 20 297  10  15   7   2  13   3  39 102]
+ [ 34   5 236  36  51  35  38  29   3  13]
+ [ 13   3  53 206  29  95  39  32   9  22]
+ [ 20   3  80  26 246  23  26  41  13   8]
+ [ 13   5  43 105  40 236  23  35   7  14]
+ [  8   3  42  57  36  27 289  15   0  13]
+ [ 12   8  33  36  38  34   9 334   5  16]
+ [ 40  15  10  15   5   1   4  10 386  28]
+ [ 19  61  14  14   1  13   5  21  27 288]]
+ __________________________________________________________________________________________________________________________________
+
+EXP20
+
+ADAM lr 0.0003 | NONE | wd 0.0005 | dropout 0 | batchnorm False | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.00030 | Exponential Factor 1 | train loss 1.4698 (running 1.6609) | val loss 1.5303 | train acc 47.64% | val acc 45.06%
+epoch 2 | lr 0.00030 | Exponential Factor 1 | train loss 1.3089 (running 1.4389) | val loss 1.4250 | train acc 54.16% | val acc 49.70%
+epoch 3 | lr 0.00030 | Exponential Factor 1 | train loss 1.2202 (running 1.3261) | val loss 1.3967 | train acc 57.14% | val acc 50.54%
+epoch 4 | lr 0.00030 | Exponential Factor 1 | train loss 1.1336 (running 1.2347) | val loss 1.3647 | train acc 60.68% | val acc 52.28%
+epoch 5 | lr 0.00030 | Exponential Factor 1 | train loss 1.0581 (running 1.1574) | val loss 1.3434 | train acc 62.62% | val acc 53.16%
+epoch 6 | lr 0.00030 | Exponential Factor 1 | train loss 1.0028 (running 1.0889) | val loss 1.3471 | train acc 64.54% | val acc 53.78%
+epoch 7 | lr 0.00030 | Exponential Factor 1 | train loss 0.9447 (running 1.0166) | val loss 1.3742 | train acc 68.08% | val acc 52.80%
+epoch 8 | lr 0.00030 | Exponential Factor 1 | train loss 0.8637 (running 0.9478) | val loss 1.3896 | train acc 69.76% | val acc 53.76%
+epoch 9 | lr 0.00030 | Exponential Factor 1 | train loss 0.7770 (running 0.8870) | val loss 1.3455 | train acc 73.30% | val acc 54.98%
+epoch 10 | lr 0.00030 | Exponential Factor 1 | train loss 0.7174 (running 0.8109) | val loss 1.3973 | train acc 75.36% | val acc 55.30%
+epoch 11 | lr 0.00030 | Exponential Factor 1 | train loss 0.6749 (running 0.7561) | val loss 1.4639 | train acc 76.70% | val acc 53.90%
+epoch 12 | lr 0.00030 | Exponential Factor 1 | train loss 0.5729 (running 0.6918) | val loss 1.4327 | train acc 81.10% | val acc 55.54%
+epoch 13 | lr 0.00030 | Exponential Factor 1 | train loss 0.5806 (running 0.6283) | val loss 1.5670 | train acc 80.28% | val acc 53.94%
+epoch 14 | lr 0.00030 | Exponential Factor 1 | train loss 0.4889 (running 0.5786) | val loss 1.5548 | train acc 83.76% | val acc 55.08%
+epoch 15 | lr 0.00030 | Exponential Factor 1 | train loss 0.4268 (running 0.5245) | val loss 1.6407 | train acc 85.68% | val acc 54.50%
+epoch 16 | lr 0.00030 | Exponential Factor 1 | train loss 0.4015 (running 0.4751) | val loss 1.6874 | train acc 86.58% | val acc 54.74%
+epoch 17 | lr 0.00030 | Exponential Factor 1 | train loss 0.3740 (running 0.4314) | val loss 1.7370 | train acc 87.62% | val acc 54.16%
+epoch 18 | lr 0.00030 | Exponential Factor 1 | train loss 0.3512 (running 0.3976) | val loss 1.8918 | train acc 88.40% | val acc 53.98%
+epoch 19 | lr 0.00030 | Exponential Factor 1 | train loss 0.3075 (running 0.3623) | val loss 1.8934 | train acc 89.52% | val acc 54.82%
+Duration: 13.31 mins
+restored best epoch 12 (val acc 55.54%)
+
+best val acc:             55.54 ± 0.00%  (epochs [12])
+final val - train loss:   1.5859 ± 0.0000  (both eval mode)
+[[302  24  41  14  21   8   9   8  50  35]
+ [ 27 339   9   7   5   2  11   4  28  76]
+ [ 28  10 250  33  45  37  40  25   3   9]
+ [ 14   7  57 186  19  87  54  35  16  26]
+ [ 16   7  89  24 231  23  35  39  13   9]
+ [  4   9  58  96  30 223  38  38  10  15]
+ [ 10  10  54  39  31  27 290  11   6  12]
+ [ 21   5  48  22  31  34  19 321   4  20]
+ [ 51  31  12  10   8   4   4   8 341  45]
+ [ 19  75  10  12   2  11  11  14  15 294]]
+ __________________________________________________________________________________________________________________________________
+
+EXP21
+
+ADAM lr 0.0003 | NONE | wd 0.001 | dropout 0 | batchnorm False | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.00030 | Exponential Factor 1 | train loss 1.4744 (running 1.6607) | val loss 1.5342 | train acc 47.66% | val acc 45.40%
+epoch 2 | lr 0.00030 | Exponential Factor 1 | train loss 1.3307 (running 1.4493) | val loss 1.4449 | train acc 53.94% | val acc 48.16%
+epoch 3 | lr 0.00030 | Exponential Factor 1 | train loss 1.2508 (running 1.3490) | val loss 1.4087 | train acc 55.96% | val acc 50.42%
+epoch 4 | lr 0.00030 | Exponential Factor 1 | train loss 1.1785 (running 1.2705) | val loss 1.3813 | train acc 58.64% | val acc 51.18%
+epoch 5 | lr 0.00030 | Exponential Factor 1 | train loss 1.1215 (running 1.2058) | val loss 1.3707 | train acc 60.54% | val acc 52.18%
+epoch 6 | lr 0.00030 | Exponential Factor 1 | train loss 1.0909 (running 1.1510) | val loss 1.3648 | train acc 62.00% | val acc 52.64%
+epoch 7 | lr 0.00030 | Exponential Factor 1 | train loss 1.0140 (running 1.0913) | val loss 1.3590 | train acc 65.28% | val acc 52.72%
+epoch 8 | lr 0.00030 | Exponential Factor 1 | train loss 0.9694 (running 1.0382) | val loss 1.3889 | train acc 65.18% | val acc 52.72%
+epoch 9 | lr 0.00030 | Exponential Factor 1 | train loss 0.9043 (running 0.9924) | val loss 1.3316 | train acc 69.62% | val acc 54.12%
+epoch 10 | lr 0.00030 | Exponential Factor 1 | train loss 0.8416 (running 0.9346) | val loss 1.3572 | train acc 71.20% | val acc 54.36%
+epoch 11 | lr 0.00030 | Exponential Factor 1 | train loss 0.8316 (running 0.8901) | val loss 1.3968 | train acc 71.16% | val acc 53.48%
+epoch 12 | lr 0.00030 | Exponential Factor 1 | train loss 0.7545 (running 0.8463) | val loss 1.3758 | train acc 73.82% | val acc 54.84%
+epoch 13 | lr 0.00030 | Exponential Factor 1 | train loss 0.7592 (running 0.7966) | val loss 1.4152 | train acc 73.66% | val acc 54.34%
+epoch 14 | lr 0.00030 | Exponential Factor 1 | train loss 0.6765 (running 0.7488) | val loss 1.4445 | train acc 77.58% | val acc 54.86%
+epoch 15 | lr 0.00030 | Exponential Factor 1 | train loss 0.6476 (running 0.7035) | val loss 1.4761 | train acc 78.40% | val acc 54.46%
+epoch 16 | lr 0.00030 | Exponential Factor 1 | train loss 0.5611 (running 0.6633) | val loss 1.4678 | train acc 80.26% | val acc 55.32%
+epoch 17 | lr 0.00030 | Exponential Factor 1 | train loss 0.5333 (running 0.6263) | val loss 1.5461 | train acc 81.58% | val acc 55.34%
+epoch 18 | lr 0.00030 | Exponential Factor 1 | train loss 0.4939 (running 0.5864) | val loss 1.5538 | train acc 83.08% | val acc 55.04%
+epoch 19 | lr 0.00030 | Exponential Factor 1 | train loss 0.4607 (running 0.5487) | val loss 1.5725 | train acc 84.68% | val acc 55.82%
+Duration: 13.98 mins
+restored best epoch 19 (val acc 55.82%)
+
+best val acc:             55.82 ± 0.00%  (epochs [19])
+final val - train loss:   1.1118 ± 0.0000  (both eval mode)
+[[346  25  10  16  26   5   7  10  44  23]
+ [ 40 337   5  11   7   4  13   5  20  66]
+ [ 51  10 156  49  71  46  58  26   3  10]
+ [ 19   9  21 197  26 103  74  30  10  12]
+ [ 21   4  44  24 266  29  36  39  13  10]
+ [ 11   7  22 108  46 234  39  36   8  10]
+ [  8  10  22  41  36  27 325  10   4   7]
+ [ 25  10  17  35  42  29  22 321   7  17]
+ [ 72  37   5  13   8   6   2   2 345  24]
+ [ 31  82   4  21   4   7  12  14  24 264]]
+ __________________________________________________________________________________________________________________________________
+
+EXP22
+
+ADAMW lr 0.0003 | NONE | wd 0.05 | dropout 0 | batchnorm False | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.00030 | Exponential Factor 1 | train loss 1.4635 (running 1.6564) | val loss 1.5254 | train acc 48.04% | val acc 45.44%
+epoch 2 | lr 0.00030 | Exponential Factor 1 | train loss 1.2899 (running 1.4261) | val loss 1.4217 | train acc 54.74% | val acc 49.54%
+epoch 3 | lr 0.00030 | Exponential Factor 1 | train loss 1.1920 (running 1.3004) | val loss 1.3855 | train acc 57.96% | val acc 50.86%
+epoch 4 | lr 0.00030 | Exponential Factor 1 | train loss 1.0909 (running 1.1920) | val loss 1.3670 | train acc 61.54% | val acc 52.26%
+epoch 5 | lr 0.00030 | Exponential Factor 1 | train loss 0.9858 (running 1.0968) | val loss 1.3462 | train acc 65.38% | val acc 53.76%
+epoch 6 | lr 0.00030 | Exponential Factor 1 | train loss 0.9094 (running 1.0084) | val loss 1.3518 | train acc 68.72% | val acc 54.74%
+epoch 7 | lr 0.00030 | Exponential Factor 1 | train loss 0.8295 (running 0.9103) | val loss 1.3935 | train acc 71.24% | val acc 53.40%
+epoch 8 | lr 0.00030 | Exponential Factor 1 | train loss 0.7081 (running 0.8194) | val loss 1.4316 | train acc 75.30% | val acc 53.92%
+epoch 9 | lr 0.00030 | Exponential Factor 1 | train loss 0.6270 (running 0.7348) | val loss 1.4167 | train acc 79.76% | val acc 54.32%
+epoch 10 | lr 0.00030 | Exponential Factor 1 | train loss 0.5239 (running 0.6389) | val loss 1.4957 | train acc 82.38% | val acc 54.66%
+epoch 11 | lr 0.00030 | Exponential Factor 1 | train loss 0.4784 (running 0.5616) | val loss 1.6257 | train acc 83.50% | val acc 54.02%
+epoch 12 | lr 0.00030 | Exponential Factor 1 | train loss 0.3915 (running 0.4827) | val loss 1.6537 | train acc 87.18% | val acc 54.70%
+epoch 13 | lr 0.00030 | Exponential Factor 1 | train loss 0.3385 (running 0.4105) | val loss 1.7609 | train acc 88.72% | val acc 55.20%
+epoch 14 | lr 0.00030 | Exponential Factor 1 | train loss 0.2762 (running 0.3540) | val loss 1.9008 | train acc 90.94% | val acc 54.20%
+epoch 15 | lr 0.00030 | Exponential Factor 1 | train loss 0.2253 (running 0.2993) | val loss 2.0271 | train acc 92.46% | val acc 54.68%
+epoch 16 | lr 0.00030 | Exponential Factor 1 | train loss 0.2049 (running 0.2653) | val loss 2.0696 | train acc 93.34% | val acc 55.28%
+epoch 17 | lr 0.00030 | Exponential Factor 1 | train loss 0.1806 (running 0.2316) | val loss 2.1653 | train acc 93.82% | val acc 55.42%
+epoch 18 | lr 0.00030 | Exponential Factor 1 | train loss 0.2259 (running 0.2054) | val loss 2.3760 | train acc 92.30% | val acc 54.38%
+epoch 19 | lr 0.00030 | Exponential Factor 1 | train loss 0.1687 (running 0.1875) | val loss 2.4138 | train acc 94.46% | val acc 53.92%
+Duration: 11.97 mins
+restored best epoch 17 (val acc 55.42%)
+
+best val acc:             55.42 ± 0.00%  (epochs [17])
+final val - train loss:   2.2451 ± 0.0000  (both eval mode)
+[[307  27  31  14  16  13  11   5  50  38]
+ [ 23 324   6  13   5   4   7   8  29  89]
+ [ 32   8 211  40  64  40  38  31   4  12]
+ [ 19   7  45 195  28  91  42  37  12  25]
+ [ 19  10  63  33 237  24  31  44  14  11]
+ [ 11   6  43 109  39 227  32  33   7  14]
+ [ 11  13  38  64  18  25 296  13   3   9]
+ [ 22  10  34  31  42  37  18 311   3  17]
+ [ 46  30  10  15   7   4   6   2 356  38]
+ [ 14  68   6  12   3  11   7  12  23 307]]
+
+ __________________________________________________________________________________________________________________________________
+
+EXP23
+
+ADAMW lr 0.0003 | NONE | wd 0.1 | dropout 0 | batchnorm False | cpu | test False
+
+========== seed 0 ==========
+epoch 1 | lr 0.00030 | Exponential Factor 1 | train loss 1.4623 (running 1.6575) | val loss 1.5272 | train acc 48.24% | val acc 45.02%
+epoch 2 | lr 0.00030 | Exponential Factor 1 | train loss 1.2986 (running 1.4255) | val loss 1.4319 | train acc 54.68% | val acc 48.86%
+epoch 3 | lr 0.00030 | Exponential Factor 1 | train loss 1.1933 (running 1.3024) | val loss 1.3833 | train acc 58.76% | val acc 51.36%
+epoch 4 | lr 0.00030 | Exponential Factor 1 | train loss 1.0880 (running 1.1938) | val loss 1.3562 | train acc 61.30% | val acc 52.74%
+epoch 5 | lr 0.00030 | Exponential Factor 1 | train loss 0.9984 (running 1.0999) | val loss 1.3413 | train acc 64.86% | val acc 53.64%
+epoch 6 | lr 0.00030 | Exponential Factor 1 | train loss 0.9090 (running 1.0135) | val loss 1.3536 | train acc 67.68% | val acc 54.76%
+epoch 7 | lr 0.00030 | Exponential Factor 1 | train loss 0.8175 (running 0.9169) | val loss 1.3741 | train acc 71.84% | val acc 54.08%
+epoch 8 | lr 0.00030 | Exponential Factor 1 | train loss 0.7331 (running 0.8277) | val loss 1.4288 | train acc 74.18% | val acc 54.40%
+epoch 9 | lr 0.00030 | Exponential Factor 1 | train loss 0.6472 (running 0.7467) | val loss 1.4198 | train acc 78.46% | val acc 54.14%
+epoch 10 | lr 0.00030 | Exponential Factor 1 | train loss 0.5397 (running 0.6550) | val loss 1.4776 | train acc 81.76% | val acc 55.06%
+epoch 11 | lr 0.00030 | Exponential Factor 1 | train loss 0.5262 (running 0.5777) | val loss 1.6295 | train acc 81.72% | val acc 53.66%
+epoch 12 | lr 0.00030 | Exponential Factor 1 | train loss 0.3969 (running 0.5043) | val loss 1.6279 | train acc 86.98% | val acc 53.94%
+epoch 13 | lr 0.00030 | Exponential Factor 1 | train loss 0.3899 (running 0.4354) | val loss 1.7719 | train acc 86.60% | val acc 54.32%
+epoch 14 | lr 0.00030 | Exponential Factor 1 | train loss 0.2994 (running 0.3734) | val loss 1.8329 | train acc 89.78% | val acc 54.96%
+epoch 15 | lr 0.00030 | Exponential Factor 1 | train loss 0.2543 (running 0.3241) | val loss 1.9607 | train acc 91.70% | val acc 54.64%
+epoch 16 | lr 0.00030 | Exponential Factor 1 | train loss 0.2227 (running 0.2837) | val loss 1.9748 | train acc 92.84% | val acc 54.70%
+epoch 17 | lr 0.00030 | Exponential Factor 1 | train loss 0.2021 (running 0.2411) | val loss 2.1315 | train acc 93.40% | val acc 54.60%
+epoch 18 | lr 0.00030 | Exponential Factor 1 | train loss 0.2152 (running 0.2136) | val loss 2.3060 | train acc 92.76% | val acc 53.60%
+epoch 19 | lr 0.00030 | Exponential Factor 1 | train loss 0.1610 (running 0.1985) | val loss 2.3238 | train acc 94.68% | val acc 54.72%
+Duration: 12.22 mins
+restored best epoch 10 (val acc 55.06%)
+
+best val acc:             55.06 ± 0.00%  (epochs [10])
+final val - train loss:   2.1628 ± 0.0000  (both eval mode)
+[[284  27  18  19  24   9   9  17  66  39]
+ [ 19 342   5  11   6   8   6   7  32  72]
+ [ 28  12 187  51  73  34  31  42  14   8]
+ [  9  10  26 215  43 105  25  32  12  24]
+ [ 13   6  57  24 274  24  10  55  13  10]
+ [  5   9  31 109  56 231  19  41  11   9]
+ [  6  11  41  62  51  35 249  23   3   9]
+ [  9  15  18  36  48  32   8 333   4  22]
+ [ 36  38  12  13   9   6   5   4 361  30]
+ [  8  83   7  18   4  13   6  13  34 277]]
+ __________________________________________________________________________________________________________________________________
+
+EXP24
+
+ 
